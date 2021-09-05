@@ -63,11 +63,23 @@ export default {
       };
       this.storeResources.unshift(newResource);
       this.setSelectedTab('resources-list');
+    },
+    removeResource(id) {
+      // ## solution 1:
+      // this.storeResources = this.resources.filters(res => res.id !== id);
+      // # this will not work becouse. We won't see changes provided in new coppy of resources arraylist,
+      // # but we see original list. Thats why this not working.
+
+      // ## solution 2:
+      const resIndex = this.storeResources.findIndex(res => res.id === id);
+      this.storeResources.splice(resIndex, 1);
+      // # this is working, but we broke rules of functional paradigm, becouse we will change the original array
     }
   },
   provide() {
     return {
       setResource: this.addResource,
+      deleteResource: this.removeResource,
       resources: this.storeResources
     };
   },
