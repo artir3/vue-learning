@@ -17,6 +17,8 @@ const app = Vue.createApp({
     return {
       playerHealth: 100,
       monsterHealth: 100,
+      round: 0,
+      winner: null,
     };
   },
   methods: {
@@ -27,9 +29,10 @@ const app = Vue.createApp({
       console.log("monster was attaced with " + attackValue + " points.");
     },
     attackPlayer() {
-      const attackValue = getRandomValue(6, 16);
+      const attackValue = getRandomValue(9, 16);
       this.playerHealth = calcAttackedHalth(this.playerHealth, attackValue);
       console.log("player was attaced with " + attackValue + " points.");
+      this.nextRound();
     },
     specialAttack() {
       const attackValue = getRandomValue(10, 25);
@@ -42,14 +45,22 @@ const app = Vue.createApp({
       );
     },
     healPlayer() {
-      const healValue = getRandomValue(10, 15);
+      const healValue = getRandomValue(10, 20);
       this.playerHealth = calcHealedHalth(this.playerHealth, healValue);
       this.attackPlayer();
       console.log("Player heals himserf by " + healValue + " points.");
     },
     surrender() {
-      this.monsterHealth = 100;
+      this.winner = "monster";
+    },
+    nextRound() {
+      this.round++;
+    },
+    startGame() {
       this.playerHealth = 100;
+      this.monsterHealth = 100;
+      this.winner = null;
+      this.round = 0;
     },
   },
   computed: {
@@ -58,6 +69,29 @@ const app = Vue.createApp({
     },
     playerHealthBarStyles() {
       return { width: this.playerHealth + "%" };
+    },
+    mayUseSpecialAttack() {
+      return this.round % 3 !== 0;
+    },
+  },
+  watch: {
+    playerHealth(value) {
+      if (value <= 0 && this.monsterHealth <= 0) {
+        // a drow
+        this.winner = "draw";
+      } else if (value <= 0) {
+        // player lost
+        this.winner = "monster";
+      }
+    },
+    monsterHealth(value) {
+      if (value <= 0 && this.playerHealth <= 0) {
+        // a drow
+        this.winner = "draw";
+      } else if (value <= 0) {
+        // monster lost
+        this.winner = "player";
+      }
     },
   },
 });
