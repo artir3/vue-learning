@@ -1,16 +1,16 @@
 <template>
   <the-header title="RememberMe"></the-header>
-  <the-resources :resources="storeResources"></the-resources>
+  <resources-list :resources="storeResources"></resources-list>
 </template>
 
 <script>
 import TheHeader from './components/layouts/TheHeader.vue';
-import TheResources from './components/lerning-resources/TheResources.vue';
+import ResourcesList from './components/lerning-resources/ResourcesList.vue';
 
 export default {
   components: {
     TheHeader,
-    TheResources
+    ResourcesList
   },
   data() {
     return {
