@@ -3,7 +3,7 @@
     <base-card>
       <header>
         <h3>{{ title }}</h3>
-        <button>Delete</button>
+        <base-button mode="flat">Delete</base-button>
       </header>
       <p>{{ description }}</p>
 
@@ -36,6 +36,7 @@ h3 {
   font-size: 1.25rem;
   margin: 0.5rem 0;
 }
+
 p {
   margin: 0.5 rem 0;
 }
