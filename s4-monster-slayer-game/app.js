@@ -19,36 +19,33 @@ const app = Vue.createApp({
       monsterHealth: 100,
       round: 0,
       winner: null,
+      logMessages: [],
     };
   },
   methods: {
     attackMonster() {
       const attackValue = getRandomValue(5, 13);
       this.monsterHealth = calcAttackedHalth(this.monsterHealth, attackValue);
+      this.logMessage("player", "attack", attackValue);
       this.attackPlayer();
-      console.log("monster was attaced with " + attackValue + " points.");
     },
     attackPlayer() {
       const attackValue = getRandomValue(9, 16);
       this.playerHealth = calcAttackedHalth(this.playerHealth, attackValue);
-      console.log("player was attaced with " + attackValue + " points.");
+      this.logMessage("monster", "attack", attackValue);
       this.nextRound();
     },
     specialAttack() {
       const attackValue = getRandomValue(10, 25);
       this.monsterHealth = calcAttackedHalth(this.monsterHealth, attackValue);
+      this.logMessage("player", "attack", attackValue);
       this.attackPlayer();
-      console.log(
-        "Player use special attack, and monster deal " +
-          attackValue +
-          " points of demage."
-      );
     },
     healPlayer() {
       const healValue = getRandomValue(10, 20);
       this.playerHealth = calcHealedHalth(this.playerHealth, healValue);
+      this.logMessage("player", "heals", healValue);
       this.attackPlayer();
-      console.log("Player heals himserf by " + healValue + " points.");
     },
     surrender() {
       this.winner = "monster";
@@ -61,6 +58,10 @@ const app = Vue.createApp({
       this.monsterHealth = 100;
       this.winner = null;
       this.round = 0;
+      this.logMessages = [];
+    },
+    logMessage(attacker, actionType, damageValue) {
+      this.logMessages.unshift({ actionBy: attacker, actionType, damageValue });
     },
   },
   computed: {
