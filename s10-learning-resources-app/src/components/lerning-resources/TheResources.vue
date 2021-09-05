@@ -17,7 +17,9 @@
       Add Resource
     </base-button>
   </base-card>
-  <component :is="selectedTab"></component>
+  <keep-alive>
+    <component :is="selectedTab"></component>
+  </keep-alive>
 </template>
 
 <script>
@@ -31,19 +33,19 @@ export default {
   },
   data() {
     return {
-      selectedTab: 'stored-resources',
+      selectedTab: 'resources-list',
       storeResources: [
         {
           id: '1',
           title: 'Test Title no 1',
           description: 'This is descrption to test object 1',
-          linl: 'https://vuejs.org'
+          link: 'https://vuejs.org'
         },
         {
           id: '2',
           title: 'Test Title no 2',
           description: 'This is descrption to test object 2',
-          linl: 'https://google.com'
+          link: 'https://google.com'
         }
       ]
     };
@@ -51,10 +53,21 @@ export default {
   methods: {
     setSelectedTab(tab) {
       this.selectedTab = tab;
+    },
+    addResource(title, description, url) {
+      const newResource = {
+        id: new Date().toISOString,
+        title: title,
+        description: description,
+        link: url
+      };
+      this.storeResources.unshift(newResource);
+      this.setSelectedTab('resources-list');
     }
   },
   provide() {
     return {
+      setResource: this.addResource,
       resources: this.storeResources
     };
   },

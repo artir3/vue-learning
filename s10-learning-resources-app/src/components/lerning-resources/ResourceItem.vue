@@ -8,7 +8,7 @@
       <p>{{ description }}</p>
 
       <nav>
-        <a :href="link">View Resource</a>
+        <a :href="link" target="_blank">View Resource</a>
       </nav>
     </base-card>
   </li>
@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  props: ['title', 'description', ' link']
+  props: ['title', 'description', 'link']
 };
 </script>
 
