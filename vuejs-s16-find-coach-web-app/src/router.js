@@ -1,8 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 
-import CouchesList from './pages/couches/CouchesList.vue';
-import CouchesDetail from './pages/couches/CouchesDetail.vue';
-import CouchesRegistration from './pages/couches/CoachRegistration.vue';
+import CoachesList from './pages/coaches/CoachesList.vue';
+import CoachesDetail from './pages/coaches/CoachesDetail.vue';
+import CoachesRegistration from './pages/coaches/CoachRegistration.vue';
 import ContactCouch from './pages/request/ContactCoach.vue';
 import RequestsReceived from './pages/request/RequestsReceived.vue';
 import NotFound from './pages/NotFound.vue';
@@ -12,15 +12,15 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/couches'
+      redirect: '/coaches'
     },
     {
-      path: '/couches',
-      component: CouchesList
+      path: '/coaches',
+      component: CoachesList
     },
     {
-      path: '/couches/:id',
-      component: CouchesDetail,
+      path: '/coaches/:id',
+      component: CoachesDetail,
       children: [
         {
           path: 'contact',
@@ -30,7 +30,7 @@ const router = createRouter({
     },
     {
       path: '/register',
-      component: CouchesRegistration
+      component: CoachesRegistration
     },
     {
       path: '/requests',
