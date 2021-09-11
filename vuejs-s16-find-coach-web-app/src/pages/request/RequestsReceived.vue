@@ -1,0 +1,3 @@
+<template>
+  Recived requests
+</template>
