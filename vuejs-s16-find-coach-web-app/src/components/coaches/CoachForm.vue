@@ -6,7 +6,7 @@
         type="text"
         name="firstname"
         id="firstname"
-        v-model.trim="fistName"
+        v-model.trim="firstName"
       />
     </div>
     <div class="form-control">
@@ -35,15 +35,15 @@
     <div class="form-control">
       <h3>Areas of expertise</h3>
       <div>
-        <input type="checkbox" name="frontend" id="frontend" v-model="areas" />
+        <input type="checkbox" id="frontend" value="frontend" v-model="areas" />
         <label for="frontend">Frontend Development</label>
       </div>
       <div>
-        <input type="checkbox" name="backend" id="backend" v-model="areas" />
+        <input type="checkbox" id="backend" value="backend" v-model="areas" />
         <label for="backend">Backend Development</label>
       </div>
       <div>
-        <input type="checkbox" name="career" id="career" v-model="areas" />
+        <input type="checkbox" id="career" value="career" v-model="areas" />
         <label for="career">Career</label>
       </div>
     </div>
@@ -53,9 +53,10 @@
 
 <script>
 export default {
+  emits: ['save-data'],
   data() {
     return {
-      fistName: '',
+      firstName: '',
       lastName: '',
       description: '',
       rate: null,
@@ -65,13 +66,13 @@ export default {
   methods: {
     submitForm() {
       const formData = {
-        firstName: this.fistName,
+        firstName: this.firstName,
         lastName: this.lastName,
         description: this.description,
         rate: this.rate,
         areas: this.areas
       };
-      console.log(formData);
+      this.$emit('save-data', formData);
     }
   }
 };
