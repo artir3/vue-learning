@@ -1,7 +1,7 @@
 export default {
   setCoach(context, data) {
     const coach = {
-      id: new Date().toISOString(),
+      id: context.rootGetters.userId + '_' + new Date().getTime(),
       firstName: data.firstName,
       lastName: data.lastName,
       description: data.description,
