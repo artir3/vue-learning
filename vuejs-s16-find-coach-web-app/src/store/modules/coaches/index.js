@@ -7,24 +7,7 @@ export default {
   state() {
     return {
       lastFetch: null,
-      coaches: [
-        {
-          id: '123213',
-          firstName: 'Bla',
-          lastName: 'Bula',
-          areas: ['frontend', 'backend', 'career'],
-          description: 'Dummy description with dummy life',
-          hourlyRate: 30
-        },
-        {
-          id: '4324',
-          firstName: 'Donat',
-          lastName: 'Bonat',
-          areas: ['frontend', 'career'],
-          description: 'Dummy description with dummy company and aad life',
-          hourlyRate: 30
-        }
-      ]
+      coaches: []
     };
   },
   mutations,
