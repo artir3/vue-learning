@@ -16,17 +16,19 @@ export default {
         body: JSON.stringify(coach)
       }
     );
-
     // console.log('Response from firebase', response);
-    // const responseData = await response.json();
-    // console.log('Data returned from firebase', responseData);
+
     if (response.ok) {
       context.commit('registerCoach', {
         ...data,
         id: userId
       });
     } else {
-      throw new Error('Saving coaches in the firebase return error');
+      const responseData = await response.json();
+      // console.log('Data returned from firebase', responseData);
+      throw new Error(
+        responseData.message || 'Saving coaches in the firebase return error'
+      );
     }
   },
   async loadCoaches(context) {
