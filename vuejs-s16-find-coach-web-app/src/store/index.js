@@ -9,6 +9,7 @@ const store = createStore({
   },
   state() {
     return {
+      url: 'https://vue-course-udemy-find-coaches-default-rtdb.europe-west1.firebasedatabase.app',
       userId: 'c3'
     };
   },
