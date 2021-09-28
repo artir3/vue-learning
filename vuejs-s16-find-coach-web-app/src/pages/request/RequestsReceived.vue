@@ -1,9 +1,17 @@
 <template>
+  <base-dialog
+    :show="!!error"
+    title="Receiving contact requests error occurred!"
+    @close="handleError"
+  >
+    <p>{{ error }}</p>
+  </base-dialog>
   <sectionbase-card>
     <header>
       <h2>Request Received</h2>
     </header>
-    <ul v-if="hasRequests">
+    <base-spinner v-if="isLoading" />
+    <ul v-else-if="hasRequests && !isLoading">
       <request-item
         v-for="req in receivedRequests"
         :key="req.id"
@@ -17,15 +25,40 @@
 
 <script>
 import RequestItem from '../../components/requests/RequestItem.vue';
+import BaseSpinner from '../../components/UI/BaseSpinner.vue';
 
 export default {
-  components: { RequestItem },
+  components: { RequestItem, BaseSpinner },
+  data() {
+    return {
+      isLoading: false,
+      error: null
+    };
+  },
+  created() {
+    this.loadRequests();
+  },
   computed: {
     receivedRequests() {
       return this.$store.getters['requests/getRequests'];
     },
     hasRequests() {
       return this.$store.getters['requests/hasRequests'];
+    }
+  },
+  methods: {
+    async loadRequests() {
+      this.isLoading = true;
+      try {
+        await this.$store.dispatch('requests/loadRequests');
+      } catch (error) {
+        this.error =
+          error.message || 'Receiving contact requests throws an error';
+      }
+      this.isLoading = false;
+    },
+    handleError() {
+      this.error = null;
     }
   }
 };
