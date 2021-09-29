@@ -1,75 +1,99 @@
 <template>
-  <form @submit.prevent="submitForm">
-    <div class="form-control" :class="{ invalid: !isTextValid('firstName') }">
-      <label for="fistname">
-        Firstname
-      </label>
-      <input
-        type="text"
-        name="firstname"
-        id="firstname"
-        v-model.trim="firstName"
-      />
-      <p v-if="!isTextValid('firstName')">Firstname must not be empty</p>
-    </div>
-    <div class="form-control" :class="{ invalid: !isTextValid('lastName') }">
-      <label for="lastname">
-        Lastname
-      </label>
-      <input
-        type="text"
-        name="lastname"
-        id="lastname"
-        v-model.trim="lastName"
-      />
-      <p v-if="!isTextValid('lastName')">Lastname must not be empty</p>
-    </div>
-    <div class="form-control" :class="{ invalid: !isTextValid('description') }">
-      <label for="description">
-        Description
-      </label>
-      <textarea
-        name="description"
-        id="description"
-        cols="30"
-        rows="5"
-        v-model.trim="description"
-      ></textarea>
-      <p v-if="!isTextValid('description')">Description must not be empty</p>
-    </div>
-    <div class="form-control" :class="{ invalid: !isNumberValid('rate') }">
-      <label for="rate">
-        Hourly Rate
-      </label>
-      <input type="number" name="rate" id="rate" v-model.number="rate" />
-      <p v-if="!isNumberValid('rate')">Rate must be grater than zero</p>
-    </div>
-    <div class="form-control" :class="{ invalid: !isCheckboxValid('areas') }">
-      <label>Areas of expertise</label>
-      <div>
-        <input type="checkbox" id="frontend" value="frontend" v-model="areas" />
-        <label for="frontend">Frontend Development</label>
+  <base-form>
+    <form @submit.prevent="submitForm">
+      <div class="form-control" :class="{ invalid: !isTextValid('firstName') }">
+        <label for="fistname">
+          Firstname
+        </label>
+        <input
+          type="text"
+          name="firstname"
+          id="firstname"
+          v-model.trim="firstName"
+        />
+        <p class="errors" v-if="!isTextValid('firstName')">
+          Firstname must not be empty
+        </p>
       </div>
-      <div>
-        <input type="checkbox" id="backend" value="backend" v-model="areas" />
-        <label for="backend">Backend Development</label>
+      <div class="form-control" :class="{ invalid: !isTextValid('lastName') }">
+        <label for="lastname">
+          Lastname
+        </label>
+        <input
+          type="text"
+          name="lastname"
+          id="lastname"
+          v-model.trim="lastName"
+        />
+        <p class="errors" v-if="!isTextValid('lastName')">
+          Lastname must not be empty
+        </p>
       </div>
-      <div>
-        <input type="checkbox" id="career" value="career" v-model="areas" />
-        <label for="career">Career</label>
+      <div
+        class="form-control"
+        :class="{ invalid: !isTextValid('description') }"
+      >
+        <label for="description">
+          Description
+        </label>
+        <textarea
+          name="description"
+          id="description"
+          cols="30"
+          rows="5"
+          v-model.trim="description"
+        ></textarea>
+        <p class="errors" v-if="!isTextValid('description')">
+          Description must not be empty
+        </p>
       </div>
-      <p v-if="!isCheckboxValid('areas')">
-        At least one expertise must be selected
+      <div class="form-control" :class="{ invalid: !isNumberValid('rate') }">
+        <label for="rate">
+          Hourly Rate
+        </label>
+        <input type="number" name="rate" id="rate" v-model.number="rate" />
+        <p class="errors" v-if="!isNumberValid('rate')">
+          Rate must be grater than zero
+        </p>
+      </div>
+      <div class="form-control" :class="{ invalid: !isCheckboxValid('areas') }">
+        <label>Areas of expertise</label>
+        <div>
+          <input
+            type="checkbox"
+            id="frontend"
+            value="frontend"
+            v-model="areas"
+          />
+          <label for="frontend">Frontend Development</label>
+        </div>
+        <div>
+          <input type="checkbox" id="backend" value="backend" v-model="areas" />
+          <label for="backend">Backend Development</label>
+        </div>
+        <div>
+          <input type="checkbox" id="career" value="career" v-model="areas" />
+          <label for="career">Career</label>
+        </div>
+        <p class="errors" v-if="!isCheckboxValid('areas')">
+          At least one expertise must be selected
+        </p>
+      </div>
+      <p class="errors" v-if="!isValid()">
+        Please fix the above errors before submit
       </p>
-    </div>
-    <p v-if="!isValid()" class="invalid">
-      Please fix the above errors before submit
-    </p>
-    <base-button>Register</base-button>
-  </form>
+      <base-button>Register</base-button>
+    </form>
+  </base-form>
 </template>
 
 <script>
+import {
+  checkboxVal,
+  numberVal,
+  textVal
+} from '../../components/validation/Validation.js';
+
 export default {
   emits: ['save-data'],
   data() {
@@ -84,13 +108,13 @@ export default {
   },
   methods: {
     isTextValid(input) {
-      return this.init | (this[input] !== '');
+      return this.init | textVal(this[input]);
     },
     isNumberValid(input) {
-      return this.init | (this[input] & (this[input] > 0));
+      return this.init | numberVal(this[input]);
     },
     isCheckboxValid(input) {
-      return this.init | (this[input].length > 0);
+      return this.init | checkboxVal(this[input]);
     },
     isValid() {
       return (
@@ -120,68 +144,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.form-control {
-  margin: 0.5rem 0;
-}
-
-label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-input[type='checkbox'] + label {
-  font-weight: normal;
-  display: inline;
-  margin: 0 0 0 0.5rem;
-}
-
-input,
-textarea {
-  display: block;
-  width: 100%;
-  border: 1px solid #ccc;
-  font: inherit;
-}
-
-textarea {
-  max-width: 100%;
-  min-width: 100%;
-}
-
-input:focus,
-textarea:focus {
-  background-color: #f0e6fd;
-  outline: none;
-  border-color: #3d008d;
-}
-
-input[type='checkbox'] {
-  display: inline;
-  width: auto;
-  border: none;
-}
-
-input[type='checkbox']:focus {
-  outline: #3d008d solid 1px;
-}
-
-h3 {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-}
-
-.invalid div > label,
-.invalid p,
-p.invalid {
-  color: red;
-}
-
-.invalid input,
-.invalid textarea {
-  border: 1px solid red;
-  background: rgba(255, 0, 0, 0.24);
-}
-</style>

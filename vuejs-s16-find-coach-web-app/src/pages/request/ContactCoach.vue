@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <base-form>
     <form @submit.prevent="submitForm">
       <div class="form-control" :class="{ invalid: !isEmailValid() }">
         <label for="email"> Email </label>
@@ -22,13 +22,11 @@
         <base-button>Send Message</base-button>
       </div>
     </form>
-  </div>
+  </base-form>
 </template>
 
 <script>
-// eslint-disable-next-line no-control-regex
-const EMAIL_REGEX_RFC_2822 = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
-
+import { emailVal, textVal } from '../../components/validation/Validation.js';
 export default {
   data() {
     return {
@@ -39,10 +37,10 @@ export default {
   },
   methods: {
     isMessageValid() {
-      return this.init | (this.message !== '');
+      return this.init | textVal(this.message);
     },
     isEmailValid() {
-      return this.init | EMAIL_REGEX_RFC_2822.test(this.email);
+      return this.init | emailVal(this.email);
     },
     isValid() {
       return this.isMessageValid() & this.isEmailValid();
@@ -70,43 +68,6 @@ form {
   border: 1px solid #ccc;
   border-radius: 12px;
   padding: 1rem;
-}
-
-.form-control {
-  margin: 0.5rem 0;
-}
-
-label {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-input,
-textarea {
-  display: block;
-  width: 100%;
-  font: inherit;
-  border: 1px solid #ccc;
-  padding: 0.15rem;
-}
-
-input:focus,
-textarea:focus {
-  border-color: #3d008d;
-  background-color: #faf6ff;
-  outline: none;
-}
-
-.errors {
-  font-weight: bold;
-  color: red;
-}
-
-.invalid input,
-.invalid textarea {
-  border: 1px solid red;
-  background: rgba(255, 0, 0, 0.24);
 }
 
 .actions {
