@@ -21,7 +21,7 @@
             Login to Register as coach
           </base-button>
           <base-button
-            v-if="sLogged && !isCoach && !isLoading"
+            v-if="isLogged && !isCoach && !isLoading"
             link
             to="/register"
             >Register Couach</base-button
@@ -87,7 +87,7 @@ export default {
     hasCoaches() {
       return !this.isLoading & this.$store.getters['coaches/hasCoaches'];
     },
-    sLogged() {
+    isLogged() {
       return this.$store.getters.isAuthenticated;
     }
   },
