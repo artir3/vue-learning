@@ -6,7 +6,7 @@ export default {
     };
 
     const response = await fetch(
-      `${context.rootState.url}/requests/${payload.coachId}.json`,
+      `${context.rootState.serverUrl}/requests/${payload.coachId}.json`,
       {
         method: 'POST',
         body: JSON.stringify(request)
@@ -27,7 +27,7 @@ export default {
   async loadRequests(context) {
     const coachId = context.rootGetters.userId;
     const response = await fetch(
-      `${context.rootState.url}/requests/${coachId}.json`
+      `${context.rootState.serverUrl}/requests/${coachId}.json`
     );
 
     if (response.ok) {
