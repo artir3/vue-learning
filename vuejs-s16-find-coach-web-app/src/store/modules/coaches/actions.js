@@ -10,7 +10,7 @@ export default {
 
     const userId = context.rootGetters.userId;
     const response = await fetch(
-      `${context.rootState.url}/coaches/${userId}.json`,
+      `${context.rootState.serverUrl}/coaches/${userId}.json`,
       {
         method: 'PUT',
         body: JSON.stringify(coach)
@@ -36,7 +36,7 @@ export default {
       return;
     }
 
-    const response = await fetch(`${context.rootState.url}/coaches.json`);
+    const response = await fetch(`${context.rootState.serverUrl}/coaches.json`);
     const responseData = await response.json();
     if (response.ok) {
       const coaches = [];
