@@ -7,6 +7,8 @@ export default {
     return {
       signupUrl:
         'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyChUiaF6fjVB9YgrdOTdpNtgdvgogFhGCg',
+      loginUrl:
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyChUiaF6fjVB9YgrdOTdpNtgdvgogFhGCg',
       userId: null,
       token: null,
       tokenExpiration: null

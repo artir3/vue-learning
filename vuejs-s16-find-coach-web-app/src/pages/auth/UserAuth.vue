@@ -72,17 +72,14 @@ export default {
         return;
       }
       this.isLoading = true;
-      if (this.mode === 'login') {
-        // .
-      } else {
-        try {
-          await this.$store.dispatch('signup', {
-            email: this.email,
-            password: this.password
-          });
-        } catch (error) {
-          this.error = error.message || 'Failed to authenticate, try later.';
-        }
+      try {
+        const methodName = this.mode === 'login' ? 'login' : 'signup';
+        await this.$store.dispatch(methodName, {
+          email: this.email,
+          password: this.password
+        });
+      } catch (error) {
+        this.error = error.message || 'Failed to authenticate, try later.';
       }
       this.isLoading = false;
     },
