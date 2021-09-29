@@ -19,7 +19,9 @@ export default {
         tokenExpiration: responseData.expiresIn
       });
     } else {
-      throw new Error(responseData.message || 'Failed to authenticate');
+      throw new Error(
+        responseData.message || 'Failed to authenticate. Check your login data.'
+      );
     }
   }
 };
