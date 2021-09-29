@@ -15,6 +15,17 @@ export default {
       payload.password
     );
   },
+  autoLogin(context) {
+    const token = localStorage.getItem('token');
+    const userId = localStorage.getItem('userId');
+    if (token && userId) {
+      context.commit('setUser', {
+        token,
+        userId,
+        tokenExpiration: null
+      });
+    }
+  },
   logout(context) {
     context.commit('setUser', {
       token: null,
@@ -35,13 +46,15 @@ async function callFirebase(context, url, email, password) {
   });
 
   const responseData = await response.json();
-  console.log(responseData);
   if (response.ok) {
-    context.commit('setUser', {
+    const data = {
       token: responseData.idToken,
       userId: responseData.localId,
       tokenExpiration: responseData.expiresIn
-    });
+    };
+    localStorage.setItem('token', data.token);
+    localStorage.setItem('userId', data.userId);
+    context.commit('setUser', data);
   } else {
     throw new Error(
       responseData.message || 'Failed to authenticate. Check your login data.'
