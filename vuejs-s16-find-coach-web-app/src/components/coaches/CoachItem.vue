@@ -1,7 +1,7 @@
 <template>
   <li>
     <h3>{{ fullName }}</h3>
-    <h4>{{ rate }}/hour</h4>
+    <h4>{{ hourlyRate }}/hour</h4>
     <div>
       <base-badge v-for="area in areas" :key="area" :title="area" :type="area">
       </base-badge>
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  props: ['firstName', 'areas', 'rate', 'lastName', 'id'],
+  props: ['firstName', 'areas', 'hourlyRate', 'lastName', 'id'],
   computed: {
     fullName() {
       return this.firstName + ' ' + this.lastName;
