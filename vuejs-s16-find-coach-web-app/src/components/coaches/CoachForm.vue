@@ -47,12 +47,20 @@
           Description must not be empty
         </p>
       </div>
-      <div class="form-control" :class="{ invalid: !isNumberValid('rate') }">
-        <label for="rate">
+      <div
+        class="form-control"
+        :class="{ invalid: !isNumberValid('hourlyRate') }"
+      >
+        <label for="hourlyRate">
           Hourly Rate
         </label>
-        <input type="number" name="rate" id="rate" v-model.number="rate" />
-        <p class="errors" v-if="!isNumberValid('rate')">
+        <input
+          type="number"
+          name="hourlyRate"
+          id="hourlyRate"
+          v-model.number="hourlyRate"
+        />
+        <p class="errors" v-if="!isNumberValid('hourlyRate')">
           Rate must be grater than zero
         </p>
       </div>
@@ -101,7 +109,7 @@ export default {
       firstName: '',
       lastName: '',
       description: '',
-      rate: null,
+      hourlyRate: null,
       areas: [],
       init: true
     };
@@ -121,7 +129,7 @@ export default {
         this.isTextValid('firstName') &
         this.isTextValid('lastName') &
         this.isTextValid('description') &
-        this.isNumberValid('rate') &
+        this.isNumberValid('hourlyRate') &
         this.isCheckboxValid('areas')
       );
     },
@@ -136,7 +144,7 @@ export default {
         firstName: this.firstName,
         lastName: this.lastName,
         description: this.description,
-        rate: this.rate,
+        hourlyRate: this.hourlyRate,
         areas: this.areas
       };
       this.$emit('save-data', formData);

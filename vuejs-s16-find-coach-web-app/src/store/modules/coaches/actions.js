@@ -4,13 +4,14 @@ export default {
       firstName: data.firstName,
       lastName: data.lastName,
       description: data.description,
-      hourlyRate: data.rate,
+      hourlyRate: data.hourlyRate,
       areas: data.areas
     };
 
+    const token = context.rootGetters.token;
     const userId = context.rootGetters.userId;
     const response = await fetch(
-      `${context.rootState.serverUrl}/coaches/${userId}.json`,
+      `${context.rootState.serverUrl}/coaches/${userId}.json?auth=${token}`,
       {
         method: 'PUT',
         body: JSON.stringify(coach)
