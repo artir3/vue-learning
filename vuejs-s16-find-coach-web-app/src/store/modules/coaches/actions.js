@@ -1,3 +1,5 @@
+import { serverUrl } from '../../../../.env';
+
 export default {
   async setCoach(context, data) {
     const coach = {
@@ -11,7 +13,7 @@ export default {
     const token = context.rootGetters.token;
     const userId = context.rootGetters.userId;
     const response = await fetch(
-      `${context.rootState.serverUrl}/coaches/${userId}.json?auth=${token}`,
+      `${serverUrl}/coaches/${userId}.json?auth=${token}`,
       {
         method: 'PUT',
         body: JSON.stringify(coach)
@@ -37,7 +39,7 @@ export default {
       return;
     }
 
-    const response = await fetch(`${context.rootState.serverUrl}/coaches.json`);
+    const response = await fetch(`${serverUrl}/coaches.json`);
     const responseData = await response.json();
     if (response.ok) {
       const coaches = [];

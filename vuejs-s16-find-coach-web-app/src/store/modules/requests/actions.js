@@ -1,3 +1,5 @@
+import { serverUrl } from '../../../../.env';
+
 export default {
   async contactCoach(context, payload) {
     const request = {
@@ -6,7 +8,7 @@ export default {
     };
 
     const response = await fetch(
-      `${context.rootState.serverUrl}/requests/${payload.coachId}.json`,
+      `${serverUrl}/requests/${payload.coachId}.json`,
       {
         method: 'POST',
         body: JSON.stringify(request)
@@ -28,7 +30,7 @@ export default {
     const coachId = context.rootGetters.userId;
     const token = context.rootGetters.token;
     const response = await fetch(
-      `${context.rootState.serverUrl}/requests/${coachId}.json?auth=${token}`
+      `${serverUrl}/requests/${coachId}.json?auth=${token}`
     );
 
     if (response.ok) {
