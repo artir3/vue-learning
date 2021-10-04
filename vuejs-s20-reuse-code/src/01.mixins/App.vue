@@ -12,8 +12,8 @@ import DeleteUser from './components/DeleteUser.vue';
 export default {
   components: {
     AddUser,
-    DeleteUser,
-  },
+    DeleteUser
+  }
 };
 </script>
 
