@@ -1,8 +1,11 @@
 <template>
   <section class="container">
-    <h2>{{ fullName }}</h2>
-    <h3>{{ age }}</h3>
-    <h3>{{ says }}</h3>
+    <user-data
+      :firstName="firstName"
+      :lastName="lastName"
+      :age="age"
+      :says="says"
+    ></user-data>
     <button @click="setNewData">Update data</button>
     <div>
       <input
@@ -26,7 +29,10 @@
 
 <script>
 import { ref, computed, watch } from 'vue';
+import UserData from './components/UserData.vue';
+
 export default {
+  components: { UserData },
   setup() {
     //its called once before "crating" a component
     // const user = reactive({
@@ -65,11 +71,11 @@ export default {
     };
 
     return {
-      fullName,
       age,
       says,
       setNewData,
       firstName,
+      lastName,
       setLastName,
       lastNameInput
     };
