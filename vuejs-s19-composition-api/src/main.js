@@ -14,10 +14,15 @@ import { createApp } from 'vue';
 // app.mount('#app');
 
 // for 07.routing
-import App from './07.routing/App.vue';
-import { router } from './07.routing/router.js';
+// import App from './07.routing/App.vue';
+// import { router } from './07.routing/router.js';
+// const app = createApp(App);
+// app.use(router);
+// app.mount('#app');
 
+// for 08.vuex
+import App from './08.vuex/App.vue';
+import { store } from './08.vuex/store.js';
 const app = createApp(App);
-
-app.use(router);
+app.use(store);
 app.mount('#app');
