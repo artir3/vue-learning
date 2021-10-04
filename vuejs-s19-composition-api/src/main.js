@@ -14,22 +14,10 @@ import { createApp } from 'vue';
 // app.mount('#app');
 
 // for 07.routing
-import { createRouter, createWebHistory } from 'vue-router';
-
 import App from './07.routing/App.vue';
-import AllProducts from './07.routing/pages/AllProducts.vue';
-import ProductDetails from './07.routing/pages/ProductDetails.vue';
-import AddProduct from './07.routing/pages/AddProduct.vue';
+import { router } from './07.routing/router.js';
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-    { path: '/', redirect: '/products' },
-    { path: '/products', component: AllProducts },
-    { path: '/products/:pid', component: ProductDetails },
-    { path: '/products/add', component: AddProduct }
-  ]
-});
 const app = createApp(App);
+
 app.use(router);
 app.mount('#app');
