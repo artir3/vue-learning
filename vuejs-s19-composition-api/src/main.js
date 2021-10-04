@@ -5,7 +5,7 @@ import { createApp } from 'vue';
 
 import BaseSearch from './06.practice.migrateToComponentApi/components/UI/BaseSearch.vue';
 import BaseContainer from './06.practice.migrateToComponentApi/components/UI/BaseContainer.vue';
-import App from './App.vue';
+import App from './06.practice.migrateToComponentApi/App.vue';
 
 const app = createApp(App);
 
