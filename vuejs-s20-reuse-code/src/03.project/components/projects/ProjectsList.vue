@@ -47,9 +47,6 @@ export default {
       return user.value.projects && availableItems.value.length > 0;
     });
 
-    // const propsWithRefs = toRefs(props);
-    // const user = propsWithRefs.user;
-
     watch(user, function() {
       updateSearch('');
     });
