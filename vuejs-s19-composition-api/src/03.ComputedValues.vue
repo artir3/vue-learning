@@ -1,7 +1,7 @@
 <template>
   <section class="container">
-    <h2>{{ user.name }}</h2>
-    <h3>{{ user.age }}</h3>
+    <h2>{{ fullName }}</h2>
+    <h3>{{ age }}</h3>
     <h3>{{ says }}</h3>
     <button @click="setNewData">Update data</button>
     <div>
@@ -24,19 +24,20 @@
 </template>
 
 <script>
-import { reactive, ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 export default {
   setup() {
     //its called once before "crating" a component
-    const user = reactive({
-      name: 'Lucifer',
-      age: 666
-    });
+    // const user = reactive({
+    //   name: 'Lucifer',
+    //   age: 666
+    // });
+    const age = ref(666);
     const says = ref('Good morning');
-    const firstName = ref('');
+    const firstName = ref('Lucifer');
     const lastName = ref('');
 
-    user.name = computed(() => {
+    const fullName = computed(() => {
       return firstName.value + ' ' + lastName.value;
     });
 
@@ -47,15 +48,22 @@ export default {
     // function setLastName(event) {
     //   lastName.value = event.target.value;
     // }
+    watch([age, fullName], (newValue, oldValue) => {
+      console.log('Old age ' + oldValue[0]);
+      console.log('New age ' + newValue[0]);
+      console.log('Old full name ' + oldValue[1]);
+      console.log('New full name ' + newValue[1]);
+    });
 
     const setNewData = () => {
-      user.name = 'Diabolo';
-      user.age = 32;
+      firstName.value = 'Diabolo';
+      age.value = 32;
       says.value = 'And Die';
     };
 
     return {
-      user,
+      fullName,
+      age,
       says,
       setNewData,
       firstName,
