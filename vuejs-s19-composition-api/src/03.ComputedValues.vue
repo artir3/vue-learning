@@ -10,14 +10,14 @@
         name="firstName"
         id="firstName"
         placeholder="First Name"
-        @input="setFirstName"
+        v-model="firstName"
       />
       <input
         type="text"
         name="lastName"
         id="lastName"
         placeholder="LastName"
-        @input="setLastName"
+        v-model="lastName"
       />
     </div>
   </section>
@@ -40,13 +40,13 @@ export default {
       return firstName.value + ' ' + lastName.value;
     });
 
-    function setFirstName(event) {
-      firstName.value = event.target.value;
-    }
+    // function setFirstName(event) {
+    //   firstName.value = event.target.value;
+    // }
 
-    function setLastName(event) {
-      lastName.value = event.target.value;
-    }
+    // function setLastName(event) {
+    //   lastName.value = event.target.value;
+    // }
 
     const setNewData = () => {
       user.name = 'Diabolo';
@@ -58,8 +58,8 @@ export default {
       user,
       says,
       setNewData,
-      setFirstName,
-      setLastName
+      firstName,
+      lastName
     };
   }
 };
