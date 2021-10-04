@@ -3,7 +3,6 @@
     <user-data
       :firstName="firstName"
       :lastName="lastName"
-      :age="age"
       :says="says"
     ></user-data>
     <button @click="setNewData">Update data</button>
@@ -28,7 +27,7 @@
 </template>
 
 <script>
-import { ref, computed, watch } from 'vue';
+import { ref, computed, watch, provide } from 'vue';
 import UserData from './components/UserData.vue';
 
 export default {
@@ -70,6 +69,7 @@ export default {
       says.value = 'And Die';
     };
 
+    provide('user-age', age);
     return {
       age,
       says,

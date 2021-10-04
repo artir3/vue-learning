@@ -5,15 +5,16 @@
 </template>
 
 <script>
-import { computed } from 'vue';
+import { computed, inject } from 'vue';
 export default {
-  props: ['firstName', 'lastName', 'age', 'says'],
+  props: ['firstName', 'lastName', 'says'],
   setup(props, context) {
     const fullName = computed(() => {
       return props.firstName + ' ' + props.lastName;
     });
+    const age = inject('user-age');
     context.emit('dummy-emit', 1);
-    return { fullName };
+    return { fullName, age };
   }
   //   computed: {
   //     fullName() {
