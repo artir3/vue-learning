@@ -7,19 +7,32 @@
     </section>
     <section class="existing-posts">
       <h1>Existing Posts</h1>
-      <post-list isAdmin />
+      <post-list :posts="posts" isAdmin />
     </section>
   </div>
 </template>
 
 <script lang="ts">
+import Vue from "vue";
 import PostList from "@/components/posts/PostList.vue";
 import AppButton from "@/components/UI/AppButton.vue";
 
-import Vue from "vue";
 export default Vue.extend({
   components: { AppButton, PostList },
-  layout: "admin"
+  layout: "admin",
+  asyncData(context) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(context.store.getters.getPosts);
+      }, 2000);
+    })
+      .then(data => {
+        return { posts: data };
+      })
+      .catch(e => {
+        context.error(new Error());
+      });
+  }
 });
 </script>
 
