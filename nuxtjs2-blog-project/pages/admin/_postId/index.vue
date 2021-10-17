@@ -13,16 +13,11 @@ export default Vue.extend({
   components: {
     PostForm
   },
-  data() {
-    return {
-      loadedPost: {
-        author: "Neko mleko",
-        title: "After mach",
-        content: "Next lorem ipsum text. Or not....",
-        thumbnail:
-          "https://assets3.thrillist.com/v1/image/2932365/1200x630/flatten;crop_down;jpeg_quality=70"
-      }
-    };
+  computed: {
+    loadedPost() {
+      const id = this.$route.params.postId;
+      return this.$store.getters.getPost(id);
+    }
   },
   layout: "admin"
 });

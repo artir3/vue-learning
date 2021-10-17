@@ -20,18 +20,10 @@ import AppButton from "@/components/UI/AppButton.vue";
 export default Vue.extend({
   components: { AppButton, PostList },
   layout: "admin",
-  asyncData(context) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(context.store.getters.getPosts);
-      }, 2000);
-    })
-      .then(data => {
-        return { posts: data };
-      })
-      .catch(e => {
-        context.error(new Error());
-      });
+  computed: {
+    posts() {
+      return this.$store.getters.getPosts;
+    }
   }
 });
 </script>

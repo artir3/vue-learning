@@ -1,17 +1,23 @@
 <template>
   <div class="single-post-page">
     <section class="post">
-      <h1 class="post-title">Title of post</h1>
+      <div
+        class="post-thumbnail"
+        :style="{ backgroundImage: 'url(' + post.thumbnail + ')' }"
+      ></div>
+      <h1 class="post-title">{{ post.title }}</h1>
       <div class="post-details">
-        <div class="post-detail">Last updated on {{ updateDate }}</div>
-        <div class="post-detail">Written by {{ author }}</div>
+        <div class="post-detail">
+          Last updated on {{ post.updateDate.toDateString() }}
+        </div>
+        <div class="post-detail">Written by {{ post.author }}</div>
       </div>
-      <p class="post-content">{{ content }}</p>
+      <p class="post-content">{{ post.content }}</p>
     </section>
     <section class="post-feedback">
       <p>
-        Let me know about you think about the post, send a mait to
-        <a :href="'mailto:' + email"></a>
+        Let me know about you think about the post, send a
+        <a :href="'mailto:' + email">mait to</a>
       </p>
     </section>
   </div>
@@ -22,11 +28,14 @@ import Vue from "vue";
 export default Vue.extend({
   data() {
     return {
-      updateDate: new Date().toDateString(),
-      author: "Dummy author",
-      content: "Dummy content",
       email: "email@e.e"
     };
+  },
+  computed: {
+    post() {
+      const id = this.$route.params.id;
+      return this.$store.getters.getPost(id);
+    }
   }
 });
 </script>
@@ -51,6 +60,15 @@ export default Vue.extend({
 
 .post-title {
   margin: 0;
+}
+
+.post-thumbnail {
+  width: 100%;
+  height: 400px;
+  padding: 1em;
+  margin-bottom: 10px;
+  background-position: center;
+  background-size: cover;
 }
 
 .post-details {

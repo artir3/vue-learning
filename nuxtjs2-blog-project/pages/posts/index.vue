@@ -10,18 +10,10 @@ import PostList from "@/components/posts/PostList.vue";
 
 export default Vue.extend({
   components: { PostList },
-  asyncData(context) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(context.store.getters.getPosts);
-      }, 2000);
-    })
-      .then(data => {
-        return { posts: data };
-      })
-      .catch(e => {
-        context.error(new Error());
-      });
+  computed: {
+    posts() {
+      return this.$store.getters.getPosts;
+    }
   }
 });
 </script>

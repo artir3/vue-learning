@@ -52,7 +52,7 @@ export default Vue.extend({
   methods: {
     onSave() {
       // save
-      console.log(this.editedPost);
+      this.$store.dispatch("savePost", this.editedPost);
       this.$router.push("/admin");
     },
     onCancel() {
