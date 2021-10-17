@@ -1,19 +1,30 @@
 <template>
   <div class="admin-new-post-page">
     <section class="new-post-form">
-      <post-form />
+      <post-form @save-post="submit" @cancel="redirect" />
     </section>
   </div>
 </template>
 
 <script lang="ts">
 import PostForm from "@/components/admin/PostForm.vue";
+import axios from "axios";
 import Vue from "vue";
 export default Vue.extend({
   components: {
     PostForm
   },
-  layout: "admin"
+  layout: "admin",
+  methods: {
+    async submit(postData: any) {
+      this.$store.dispatch("savePost", postData).then(() => {
+        this.redirect();
+      });
+    },
+    redirect() {
+      this.$router.push("/admin");
+    }
+  }
 });
 </script>
 

@@ -7,9 +7,7 @@
       ></div>
       <h1 class="post-title">{{ post.title }}</h1>
       <div class="post-details">
-        <div class="post-detail">
-          Last updated on {{ post.updateDate.toDateString() }}
-        </div>
+        <div class="post-detail">Last updated on {{ post.updateDate }}</div>
         <div class="post-detail">Written by {{ post.author }}</div>
       </div>
       <p class="post-content">{{ post.content }}</p>
@@ -24,6 +22,7 @@
 </template>
 
 <script lang="ts">
+import axios from "axios";
 import Vue from "vue";
 export default Vue.extend({
   data() {
@@ -31,10 +30,17 @@ export default Vue.extend({
       email: "email@e.e"
     };
   },
-  computed: {
-    post() {
-      const id = this.$route.params.id;
-      return this.$store.getters.getPost(id);
+  async asyncData(context) {
+    const id = context.params.id;
+    const response = await axios.get(
+      `${context.$config.dbUrl}/posts/${id}.json`
+    );
+    if (response.status == 200) {
+      return {
+        post: response.data
+      };
+    } else {
+      throw new Error(`Receiving post with id ${id} throws an error`);
     }
   }
 });

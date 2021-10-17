@@ -9,6 +9,9 @@
     <app-control-input v-model="editedPost.thumbnail">
       Thumbnail link
     </app-control-input>
+    <app-control-input controlType="textarea" v-model="editedPost.previewText">
+      previewText
+    </app-control-input>
     <app-control-input controlType="textarea" v-model="editedPost.content">
       Content
     </app-control-input>
@@ -45,18 +48,18 @@ export default Vue.extend({
             author: "",
             title: "",
             content: "",
-            thumbnail: ""
+            thumbnail: "",
+            previewText: ""
           }
     };
   },
   methods: {
     onSave() {
       // save
-      this.$store.dispatch("savePost", this.editedPost);
-      this.$router.push("/admin");
+      this.$emit("save-post", { ...this.editedPost, updateDate: new Date() });
     },
     onCancel() {
-      this.$router.push("/admin");
+      this.$emit("cancel");
     }
   }
 });
