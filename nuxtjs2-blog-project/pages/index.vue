@@ -4,35 +4,63 @@
       <h1>Get the latest tech news!</h1>
     </section>
     <section class="featured-posts">
-      <nuxt-link
-        v-for="id in 4"
-        :key="id"
-        :to="'/posts/' + id"
-        class="post-preview"
+      <post-preview
+        v-for="post in posts"
+        :key="post.id"
+        :id="post.id"
+        :previewText="post.previewText"
+        :title="post.title"
+        :thumbnail="post.thumbnail"
       >
-        <article>
-          <div
-            class="post-thumbnail"
-            :style="'background-image: url(' + link + ');'"
-          ></div>
-          <div class="post-content">
-            <h1>Post Titlle no {{ id }}</h1>
-            <p>Preview text</p>
-          </div>
-        </article>
-      </nuxt-link>
+      </post-preview>
     </section>
   </div>
 </template>
 
 <script lang="ts">
+import PostPreview from "~/components/posts/PostPreview.vue";
 import Vue from "vue";
 
 export default Vue.extend({
+  components: {
+    PostPreview
+  },
   data() {
     return {
-      link:
-        "https://lh3.googleusercontent.com/proxy/YLt0DR0-rNWQnVaa7sFefrjQ6df-SkM3FyjEMbjAUlGJJag_GmwEwJC5OcZAW_yZ8WKmw6JbmWYybkViJWeT_8VGM6aP-CLJJEen-8y0M5diINvQAeA-l9ELl_srNU9LiNWHs_cpFP21DeY_32IHR0OZFlFCT0j4K1reB5RFVLFW89h1Xv_Q77o-z8bJY_VTnuGT6gBUuyjm"
+      posts: [
+        {
+          id: 1,
+          title: "New beginning",
+          thumbnail:
+            "https://lh3.googleusercontent.com/proxy/YLt0DR0-rNWQnVaa7sFefrjQ6df-SkM3FyjEMbjAUlGJJag_GmwEwJC5OcZAW_yZ8WKmw6JbmWYybkViJWeT_8VGM6aP-CLJJEen-8y0M5diINvQAeA-l9ELl_srNU9LiNWHs_cpFP21DeY_32IHR0OZFlFCT0j4K1reB5RFVLFW89h1Xv_Q77o-z8bJY_VTnuGT6gBUuyjm",
+          previewText:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis leo purus, lacinia ut ornare in, elementum a mauris. Vivamus ut erat nisi. Pellentesque porttitor orci quis justo mollis, ut vehicula diam mattis. Ut a pellentesque lacus. Ut lobortis erat varius, iaculis erat sed, aliquam mi. Maecenas dictum vestibulum metus, rutrum accumsan libero ultricies vel. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris vulputate ante sed enim consectetur, quis fringilla justo pellentesque. Nam vestibulum euismod suscipit."
+        },
+        {
+          id: 2,
+          title: "Start journey",
+          thumbnail:
+            "https://lh3.googleusercontent.com/proxy/YLt0DR0-rNWQnVaa7sFefrjQ6df-SkM3FyjEMbjAUlGJJag_GmwEwJC5OcZAW_yZ8WKmw6JbmWYybkViJWeT_8VGM6aP-CLJJEen-8y0M5diINvQAeA-l9ELl_srNU9LiNWHs_cpFP21DeY_32IHR0OZFlFCT0j4K1reB5RFVLFW89h1Xv_Q77o-z8bJY_VTnuGT6gBUuyjm",
+          previewText:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis leo purus, lacinia ut ornare in, elementum a mauris. Vivamus ut erat nisi. Pellentesque porttitor orci quis justo mollis, ut vehicula diam mattis. Ut a pellentesque lacus. Ut lobortis erat varius, iaculis erat sed, aliquam mi. Maecenas dictum vestibulum metus, rutrum accumsan libero ultricies vel. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris vulputate ante sed enim consectetur, quis fringilla justo pellentesque. Nam vestibulum euismod suscipit."
+        },
+        {
+          id: 3,
+          title: "Hard times",
+          thumbnail:
+            "https://lh3.googleusercontent.com/proxy/YLt0DR0-rNWQnVaa7sFefrjQ6df-SkM3FyjEMbjAUlGJJag_GmwEwJC5OcZAW_yZ8WKmw6JbmWYybkViJWeT_8VGM6aP-CLJJEen-8y0M5diINvQAeA-l9ELl_srNU9LiNWHs_cpFP21DeY_32IHR0OZFlFCT0j4K1reB5RFVLFW89h1Xv_Q77o-z8bJY_VTnuGT6gBUuyjm",
+          previewText:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis leo purus, lacinia ut ornare in, elementum a mauris. Vivamus ut erat nisi. Pellentesque porttitor orci quis justo mollis, ut vehicula diam mattis. Ut a pellentesque lacus. Ut lobortis erat varius, iaculis erat sed, aliquam mi. Maecenas dictum vestibulum metus, rutrum accumsan libero ultricies vel. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris vulputate ante sed enim consectetur, quis fringilla justo pellentesque. Nam vestibulum euismod suscipit."
+        },
+        {
+          id: 4,
+          title: "The end",
+          thumbnail:
+            "https://lh3.googleusercontent.com/proxy/YLt0DR0-rNWQnVaa7sFefrjQ6df-SkM3FyjEMbjAUlGJJag_GmwEwJC5OcZAW_yZ8WKmw6JbmWYybkViJWeT_8VGM6aP-CLJJEen-8y0M5diINvQAeA-l9ELl_srNU9LiNWHs_cpFP21DeY_32IHR0OZFlFCT0j4K1reB5RFVLFW89h1Xv_Q77o-z8bJY_VTnuGT6gBUuyjm",
+          previewText:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis leo purus, lacinia ut ornare in, elementum a mauris. Vivamus ut erat nisi. Pellentesque porttitor orci quis justo mollis, ut vehicula diam mattis. Ut a pellentesque lacus. Ut lobortis erat varius, iaculis erat sed, aliquam mi. Maecenas dictum vestibulum metus, rutrum accumsan libero ultricies vel. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris vulputate ante sed enim consectetur, quis fringilla justo pellentesque. Nam vestibulum euismod suscipit."
+        }
+      ]
     };
   }
 });
@@ -76,41 +104,5 @@ export default Vue.extend({
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-}
-
-.post-preview {
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px #ccc;
-  background-color: white;
-  width: 90%;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-@media (min-width: 850px) {
-  .post-preview {
-    width: 400px;
-    margin: 10px;
-  }
-}
-
-.post-thumbnail {
-  width: 100%;
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-}
-
-.post-content {
-  padding: 10px;
-  text-align: center;
-}
-
-a:hover .post-content,
-a:active .post-content {
-  background-color: #ccc;
 }
 </style>
