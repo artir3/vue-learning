@@ -1,17 +1,24 @@
 <template>
   <div class="admin-auth-page">
     <div class="auth-container">
-      <form>
-        <AppControlInput type="email">E-Mail Address</AppControlInput>
-        <AppControlInput type="password">Password</AppControlInput>
-        <AppButton type="submit">{{ isLogin ? "Login" : "Sign Up" }}</AppButton>
-        <AppButton
+      <form @submit.prevent="onSubmit">
+        <app-control-input v-model="email" type="email">
+          E-Mail Address
+        </app-control-input>
+        <app-control-input v-model="password" type="password">
+          Password
+        </app-control-input>
+        <app-button type="submit">{{
+          isLogin ? "Login" : "Sign Up"
+        }}</app-button>
+        <app-button
           type="button"
           btn-style="inverted"
           style="margin-left: 10px"
           @click="isLogin = !isLogin"
-          >Switch to {{ isLogin ? "Signup" : "Login" }}</AppButton
         >
+          Switch to {{ isLogin ? "Signup" : "Login" }}
+        </app-button>
       </form>
     </div>
   </div>
@@ -23,8 +30,27 @@ export default {
   layout: "admin",
   data() {
     return {
-      isLogin: true
+      isLogin: true,
+      email: "",
+      password: ""
     };
+  },
+  methods: {
+    onSubmit() {
+      this.$store
+        .dispatch("authenticateUser", {
+          email: this.email,
+          password: this.password,
+          isLogin: this.isLogin
+        })
+        .then(isLogged => {
+          if (isLogged) {
+            this.$router.push("/admin");
+          } else {
+            alert("Not logger. Fix email and password");
+          }
+        });
+    }
   }
 };
 </script>

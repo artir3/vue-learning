@@ -29,8 +29,6 @@
 
 <script lang="ts">
 import Vue from "vue";
-import AppButton from "@/components/UI/AppButton.vue";
-import AppControlInput from "@/components/UI/AppControlInput.vue";
 
 export default Vue.extend({
   props: {
@@ -39,7 +37,6 @@ export default Vue.extend({
       required: false
     }
   },
-  components: { AppButton, AppControlInput },
   data() {
     return {
       editedPost: this.post

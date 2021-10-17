@@ -39,17 +39,21 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ["@nuxtjs/axios"],
 
+  env: {
+    loginUrl: `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.NUXT_ENV_API_KEY}`,
+    signupUrl: `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.NUXT_ENV_API_KEY}`
+  },
+
   axios: {
-    baseURL: process.env.NUXT_ENV_DB_URL,
+    baseURL:
+      "https://nuxt-course-cedb7-default-rtdb.europe-west1.firebasedatabase.app/",
     credentials: false
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
-  publicRuntimeConfig: {
-    dbUrl: process.env.NUXT_ENV_DB_URL
-  },
+  publicRuntimeConfig: {},
 
   transition: {
     name: "fade",
