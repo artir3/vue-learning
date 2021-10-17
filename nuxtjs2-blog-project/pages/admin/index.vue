@@ -4,6 +4,9 @@
       <app-button @click="$router.push('/admin/new-post')">
         Create Post
       </app-button>
+      <app-button style="logout" @click="onLogout">
+        Logout
+      </app-button>
     </section>
     <section class="existing-posts">
       <h1>Existing Posts</h1>
@@ -20,6 +23,12 @@ export default Vue.extend({
   computed: {
     posts() {
       return this.$store.getters.getPosts;
+    }
+  },
+  methods: {
+    onLogout() {
+      this.$store.dispatch("logout");
+      this.$router.push("/admin/auth");
     }
   },
   middleware: ["check-auth", "auth"]
@@ -39,5 +48,9 @@ export default Vue.extend({
 
 .existing-posts h1 {
   text-align: center;
+}
+
+#logout {
+  margin-left: 10px;
 }
 </style>

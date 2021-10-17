@@ -58,11 +58,6 @@ export default {
       throw new Error("Signup to service throws en error");
     }
   },
-  setLogoutTimer({ commit }, duration) {
-    setTimeout(() => {
-      commit("clearToken");
-    }, duration);
-  },
   initAuth({ commit }, req) {
     let token;
     let expirationDate;
@@ -89,5 +84,14 @@ export default {
       return;
     }
     commit("setToken", token);
+  },
+  logout({ commit }) {
+    commit("clearToken");
+    Cookie.remove("jwt");
+    Cookie.remove("expirationDateTime");
+    if (process.client) {
+      localStorage.removeItem("token");
+      localStorage.removeItem("tokenExpiration");
+    }
   }
 };
