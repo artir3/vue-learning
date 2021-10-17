@@ -7,7 +7,8 @@ const createStore = () => {
   return new Store({
     state() {
       return {
-        posts: []
+        posts: [],
+        token: null
       };
     },
     getters,

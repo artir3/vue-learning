@@ -21,7 +21,8 @@ export default Vue.extend({
     posts() {
       return this.$store.getters.getPosts;
     }
-  }
+  },
+  middleware: ["auth"]
 });
 </script>
 

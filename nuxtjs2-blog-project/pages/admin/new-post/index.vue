@@ -19,7 +19,8 @@ export default Vue.extend({
     redirect() {
       this.$router.push("/admin");
     }
-  }
+  },
+  middleware: ["auth"]
 });
 </script>
 

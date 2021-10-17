@@ -24,7 +24,8 @@ export default Vue.extend({
       this.$router.push("/admin");
     }
   },
-  layout: "admin"
+  layout: "admin",
+  middleware: ["auth"]
 });
 </script>
 
