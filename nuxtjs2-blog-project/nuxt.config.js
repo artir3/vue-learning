@@ -21,6 +21,9 @@ export default {
     ]
   },
 
+  // dev: true,
+  // debug: true,
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["~assets/styles/main.css"],
 

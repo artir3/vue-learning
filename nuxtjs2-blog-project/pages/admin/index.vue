@@ -22,7 +22,7 @@ export default Vue.extend({
       return this.$store.getters.getPosts;
     }
   },
-  middleware: ["auth"]
+  middleware: ["check-auth", "auth"]
 });
 </script>
 

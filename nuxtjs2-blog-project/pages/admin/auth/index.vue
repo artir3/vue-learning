@@ -35,6 +35,7 @@ export default {
       password: ""
     };
   },
+  middleware: "check-auth",
   methods: {
     onSubmit() {
       this.$store

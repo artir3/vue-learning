@@ -3,7 +3,6 @@ export default {
     return state.posts;
   },
   isAuthenticated(state) {
-    console.log("getters - state.token", state.token);
     return !!state.token;
   }
 };

@@ -10,8 +10,9 @@ export default {
     state.posts[postIndex] = post;
   },
   setToken(state, token) {
-    console.log("mutations - token", token);
     state.token = token;
-    console.log("mutations - state.token", state.token);
+  },
+  clearToken(state) {
+    state.token = null;
   }
 };
