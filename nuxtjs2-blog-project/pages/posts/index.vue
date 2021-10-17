@@ -6,10 +6,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import PostList from "@/components/posts/PostList.vue";
 
 export default Vue.extend({
-  components: { PostList },
   computed: {
     posts() {
       return this.$store.getters.getPosts;

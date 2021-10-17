@@ -14,11 +14,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import PostList from "@/components/posts/PostList.vue";
-import AppButton from "@/components/UI/AppButton.vue";
 
 export default Vue.extend({
-  components: { AppButton, PostList },
   layout: "admin",
   computed: {
     posts() {

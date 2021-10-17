@@ -7,13 +7,9 @@
 </template>
 
 <script lang="ts">
-import PostForm from "@/components/admin/PostForm.vue";
 import axios from "axios";
 import Vue from "vue";
 export default Vue.extend({
-  components: {
-    PostForm
-  },
   async asyncData(context) {
     const id = context.params.postId;
     const response = await axios.get(

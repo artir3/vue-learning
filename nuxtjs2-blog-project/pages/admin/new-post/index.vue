@@ -7,13 +7,8 @@
 </template>
 
 <script lang="ts">
-import PostForm from "@/components/admin/PostForm.vue";
-import axios from "axios";
 import Vue from "vue";
 export default Vue.extend({
-  components: {
-    PostForm
-  },
   layout: "admin",
   methods: {
     async submit(postData: any) {
