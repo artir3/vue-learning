@@ -7,7 +7,9 @@
       ></div>
       <h1 class="post-title">{{ post.title }}</h1>
       <div class="post-details">
-        <div class="post-detail">Last updated on {{ post.updateDate }}</div>
+        <div class="post-detail">
+          Last updated on {{ post.updateDate | date }}
+        </div>
         <div class="post-detail">Written by {{ post.author }}</div>
       </div>
       <p class="post-content">{{ post.content }}</p>
