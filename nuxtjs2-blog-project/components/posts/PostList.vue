@@ -4,9 +4,10 @@
       v-for="post in posts"
       :key="post.id"
       :id="post.id"
-      :previewText="post.previewText"
+      :preview-text="post.previewText"
       :title="post.title"
       :thumbnail="post.thumbnail"
+      :is-admin="isAdmin"
     >
     </post-preview>
   </section>
@@ -17,6 +18,12 @@ import PostPreview from "@/components/posts/PostPreview.vue";
 
 import Vue from "vue";
 export default Vue.extend({
+  props: {
+    isAdmin: {
+      type: Boolean,
+      default: false
+    }
+  },
   components: { PostPreview },
   data() {
     return {

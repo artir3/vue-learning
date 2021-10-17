@@ -1,0 +1,63 @@
+<template>
+  <form @submit.prevent="onSave">
+    <app-control-input v-model="editedPost.author">
+      Author name
+    </app-control-input>
+    <app-control-input v-model="editedPost.title">
+      Post title
+    </app-control-input>
+    <app-control-input v-model="editedPost.thumbnail">
+      Thumbnail link
+    </app-control-input>
+    <app-control-input controlType="textarea" v-model="editedPost.content">
+      Content
+    </app-control-input>
+    <app-button type="submit">Save</app-button>
+    <app-button
+      type="button"
+      style="margin-left: 10px"
+      btnStyle="cancel"
+      @click="onCancel"
+    >
+      Cancel
+    </app-button>
+  </form>
+</template>
+
+<script lang="ts">
+import Vue from "vue";
+import AppButton from "@/components/UI/AppButton.vue";
+import AppControlInput from "@/components/UI/AppControlInput.vue";
+
+export default Vue.extend({
+  props: {
+    post: {
+      type: Object,
+      required: false
+    }
+  },
+  components: { AppButton, AppControlInput },
+  data() {
+    return {
+      editedPost: this.post
+        ? { ...this.post }
+        : {
+            author: "",
+            title: "",
+            content: "",
+            thumbnail: ""
+          }
+    };
+  },
+  methods: {
+    onSave() {
+      // save
+      console.log(this.editedPost);
+      this.$router.push("/admin");
+    },
+    onCancel() {
+      this.$router.push("/admin");
+    }
+  }
+});
+</script>
