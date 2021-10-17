@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import PostPreview from "~/components/posts/PostPreview.vue";
+import PostPreview from "@/components/posts/PostPreview.vue";
 import Vue from "vue";
 
 export default Vue.extend({
