@@ -24,7 +24,6 @@
 </template>
 
 <script lang="ts">
-import axios from "axios";
 import Vue from "vue";
 export default Vue.extend({
   data() {
@@ -32,18 +31,12 @@ export default Vue.extend({
       email: "email@e.e"
     };
   },
-  async asyncData(context) {
-    const id = context.params.id;
-    const response = await axios.get(
-      `${context.$config.dbUrl}/posts/${id}.json`
-    );
-    if (response.status == 200) {
-      return {
-        post: response.data
-      };
-    } else {
-      throw new Error(`Receiving post with id ${id} throws an error`);
-    }
+  async asyncData({ params, app: { $axios } }) {
+    const id = params.id;
+    const data = await $axios.$get(`/posts/${id}.json`);
+    return {
+      post: data
+    };
   }
 });
 </script>

@@ -7,21 +7,14 @@
 </template>
 
 <script lang="ts">
-import axios from "axios";
 import Vue from "vue";
 export default Vue.extend({
-  async asyncData(context) {
-    const id = context.params.postId;
-    const response = await axios.get(
-      `${context.$config.dbUrl}/posts/${id}.json`
-    );
-    if (response.status == 200) {
-      return {
-        loadedPost: { ...(response.data as {}), id }
-      };
-    } else {
-      throw new Error(`Receiving post with id ${id} throws an error`);
-    }
+  async asyncData({ params: { postId }, app: { $axios } }) {
+    const id = postId;
+    const data = await $axios.$get(`/posts/${id}.json`);
+    return {
+      loadedPost: { ...data, id }
+    };
   },
   methods: {
     async submit(putData: any) {
