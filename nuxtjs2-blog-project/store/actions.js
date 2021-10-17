@@ -1,3 +1,5 @@
+import Cookie from "js-cookie";
+
 export default {
   setPosts(context, posts) {
     context.commit("setAllPosts", posts);
@@ -43,11 +45,11 @@ export default {
       const response = await this.$axios.$post(url, data);
       commit("setToken", response.idToken);
       localStorage.setItem("token", response.idToken);
-      const expirationTime = response.expiresIn * 1000;
-      localStorage.setItem(
-        "tokenExpiration",
-        new Date().getTime() + expirationTime
-      );
+      const expirationTime = 15 * 1000;
+      const expirationDateTime = new Date().getTime() + expirationTime;
+      localStorage.setItem("tokenExpiration", expirationDateTime);
+      Cookie.set("jwt", response.idToken);
+      Cookie.set("expirationDateTime", expirationDateTime);
       dispatch("setLogoutTimer", expirationTime);
       return !!response.idToken;
     } catch (e) {
@@ -62,11 +64,29 @@ export default {
       commit("clearToken");
     }, duration);
   },
-  initAuth({ commit, dispatch }) {
-    const token = localStorage.getItem("token");
-    const expirationDate = localStorage.getItem("tokenExpiration");
-    if (new Date().getTime() > +expirationDate || !token) {
-      return;
+  initAuth({ commit, dispatch }, req) {
+    let token;
+    let expirationDate;
+    if (req) {
+      const cookie = req.headers.cookie;
+      if (!cookie) {
+        return;
+      }
+      const cookies = cookie.split(";");
+      const jwtCookie = cookies.find(c => c.trim().startsWith("jwt="));
+      if (!jwtCookie) {
+        return;
+      }
+      token = jwtCookie.split("=")[1];
+      expirationDate = cookies
+        .find(c => c.trim().startsWith("expirationDateTime="))
+        .split("=")[1];
+    } else {
+      token = localStorage.getItem("token");
+      expirationDate = localStorage.getItem("tokenExpiration");
+      if (new Date().getTime() > +expirationDate || !token) {
+        return;
+      }
     }
     dispatch("setLogoutTimer", +expirationDate - new Date().getTime());
     commit("setToken", token);
