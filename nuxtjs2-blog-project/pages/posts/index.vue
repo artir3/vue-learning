@@ -8,6 +8,7 @@
 import Vue from "vue";
 
 export default Vue.extend({
+  // middleware: "page-log",
   computed: {
     posts() {
       return this.$store.getters.getPosts;

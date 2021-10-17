@@ -23,6 +23,7 @@ export default Vue.extend({
       displaySidenav: false
     };
   },
+  // middleware: "layout-log",
   methods: {
     toggleSidenav() {
       this.displaySidenav = !this.displaySidenav;
