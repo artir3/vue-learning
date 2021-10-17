@@ -34,7 +34,7 @@ export default {
       commit("setAllPosts", posts);
     }
   },
-  async authenticateUser({ commit, dispatch }, authData) {
+  async authenticateUser({ commit }, authData) {
     const url = authData.isLogin ? process.env.loginUrl : process.env.signupUrl;
     try {
       const data = {
@@ -45,12 +45,11 @@ export default {
       const response = await this.$axios.$post(url, data);
       commit("setToken", response.idToken);
       localStorage.setItem("token", response.idToken);
-      const expirationTime = 15 * 1000;
+      const expirationTime = Number.parseInt(response.expiresIn) * 1000;
       const expirationDateTime = new Date().getTime() + expirationTime;
       localStorage.setItem("tokenExpiration", expirationDateTime);
       Cookie.set("jwt", response.idToken);
       Cookie.set("expirationDateTime", expirationDateTime);
-      dispatch("setLogoutTimer", expirationTime);
       return !!response.idToken;
     } catch (e) {
       if (this.isLogin) {
@@ -64,7 +63,7 @@ export default {
       commit("clearToken");
     }, duration);
   },
-  initAuth({ commit, dispatch }, req) {
+  initAuth({ commit }, req) {
     let token;
     let expirationDate;
     if (req) {
@@ -84,11 +83,11 @@ export default {
     } else {
       token = localStorage.getItem("token");
       expirationDate = localStorage.getItem("tokenExpiration");
-      if (new Date().getTime() > +expirationDate || !token) {
-        return;
-      }
     }
-    dispatch("setLogoutTimer", +expirationDate - new Date().getTime());
+    if (new Date().getTime() > +expirationDate || !token) {
+      commit("clearToken");
+      return;
+    }
     commit("setToken", token);
   }
 };
