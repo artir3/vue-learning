@@ -19,7 +19,7 @@ export default Vue.extend({
   name: "PostPreview",
   props: {
     id: {
-      type: String,
+      type: Number,
       required: true
     },
     title: {
