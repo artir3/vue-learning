@@ -1,11 +1,23 @@
-* {
-  box-sizing: border-box;
-}
+<template>
+  <header class="the-header">
+    <div><a href="/" class="main-header__brand"> uHist </a></div>
+    <nav class="main-nav">
+      <ul class="main-nav__items">
+        <li class="main-nav__item">
+          <a href="packages">Packages</a>
+        </li>
+        <li class="main-nav__item">
+          <a href="customers">Customers</a>
+        </li>
+        <li class="main-nav__item">
+          <a href="start-hosting">Start Hosting</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</template>
 
-body {
-  margin: 0px;
-}
-
+<style>
 .the-header {
   width: 100%;
   background-color: #2ddf5c;
@@ -47,21 +59,6 @@ body {
   display: inline-block;
   border: rgb(71, 71, 71) solid 0.5px;
   padding: 10px;
+  margin: 0 16px;
 }
-
-#product-overview {
-  background-color: #ff1b68;
-  color: white;
-  width: 100%;
-  height: 500px;
-  padding: 10px;
-}
-
-.section-title {
-  color: #2ddf5c;
-}
-
-.product-overview h1 {
-  color: white;
-  font-family: "Anton", "sans-serif";
-}
+</style>
