@@ -61,4 +61,14 @@
   padding: 10px;
   margin: 0 16px;
 }
+
+.main-nav__item a {
+  text-decoration: none;
+  color: #0e4f1f;
+}
+
+.main-nav__item a:active,
+.main-nav__item a:hover {
+  color: white;
+}
 </style>
