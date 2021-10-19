@@ -6,33 +6,29 @@
 
     <section id="plans">
       <h1 class="section-title">Chose your plan</h1>
-      <p>
-        Cupidatat magna sit pariatur consectetur veniam adipisicing labore
-        commodo irure ipsum ut sit incididunt nisi. Proident adipisicing duis
-        adipisicing non enim irure enim eiusmod fugiat. Reprehenderit cillum ad
-        sunt ad non deserunt fugiat irure. Esse irure enim minim ex eiusmod
-        irure quis Lorem nostrud eiusmod. Ea enim aute aliqua ullamco labore ea
-        cupidatat amet et labore exercitation culpa amet. Incididunt aliqua
-        dolor exercitation deserunt consequat commodo et eu eiusmod quis officia
-        est deserunt amet.
-      </p>
-      <p>
-        Cupidatat magna sit pariatur consectetur veniam adipisicing labore
-        commodo irure ipsum ut sit incididunt nisi. Proident adipisicing duis
-        adipisicing non enim irure enim eiusmod fugiat. Reprehenderit cillum ad
-        sunt ad non deserunt fugiat irure. Esse irure enim minim ex eiusmod
-        irure quis Lorem nostrud eiusmod. Ea enim aute aliqua ullamco labore ea
-        cupidatat amet et labore exercitation culpa amet. Incididunt aliqua
-        dolor exercitation deserunt consequat commodo et eu eiusmod quis officia
-        est deserunt amet.
-      </p>
+      <div>
+        <subscription-item v-for="plan in plans" :key="plan.id" :plan="plan" />
+      </div>
     </section>
   </main>
 </template>
 
+<script>
+import SubscriptionItem from "~~/components/SubscriptionItem.vue";
+import { subscriptions } from "~~/data/subscriptions";
+export default {
+  components: { SubscriptionItem },
+  data() {
+    return {
+      plans: subscriptions,
+    };
+  },
+};
+</script>
+
 <style>
 #product-overview {
-  background-color: url("~assets/images/main-page.jpg");
+  background-color: url("~~assets/images/main-page.jpg");
   color: rgb(128, 128, 128);
   width: 100%;
   height: 300px;
@@ -41,6 +37,7 @@
 
 .section-title {
   color: #2ddf5c;
+  text-align: center;
 }
 
 .product-overview h1 {
