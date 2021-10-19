@@ -1,6 +1,7 @@
 <template>
-  <TheHeader />
+  <the-header />
   <slot />
+  <the-footer />
 </template>
 
 <style>
