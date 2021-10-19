@@ -1,15 +1,15 @@
 <template>
   <header class="the-header">
-    <div><a href="/" class="main-header__brand"> uHist </a></div>
-    <nav class="main-nav">
-      <ul class="main-nav__items">
-        <li class="main-nav__item">
+    <div><a href="/" class="the-header__brand"> uHist </a></div>
+    <nav class="the-header__nav">
+      <ul class="the-header__nav__items">
+        <li class="the-header__nav__item">
           <a href="packages">Packages</a>
         </li>
-        <li class="main-nav__item">
+        <li class="the-header__nav__item">
           <a href="customers">Customers</a>
         </li>
-        <li class="main-nav__item main-nav__item--cta">
+        <li class="the-header__nav__item the-header__nav__item--cta">
           <a href="start-hosting">Start Hosting</a>
         </li>
       </ul>
@@ -30,7 +30,7 @@
   vertical-align: middle;
 }
 
-.main-header__brand {
+.the-header__brand {
   color: #0e4f1f;
   text-decoration: none;
   padding: 10px;
@@ -38,37 +38,37 @@
   font-size: 24px;
 }
 
-.main-nav {
+.the-header__nav {
   display: inline-block;
   text-align: right;
   width: calc(100% - 100px);
   vertical-align: middle;
 }
 
-.main-nav__items {
+.the-header__nav__items {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.main-nav__item {
+.the-header__nav__item {
   display: inline-block;
   margin: 0 16px;
 }
 
-.main-nav__item a {
+.the-header__nav__item a {
   text-decoration: none;
   color: #0e4f1f;
   padding: 10px;
 }
 
-.main-nav__item a:active,
-.main-nav__item a:hover {
+.the-header__nav__item a:active,
+.the-header__nav__item a:hover {
   border: rgb(71, 71, 71) solid 0.5px;
   color: white;
 }
 
-.main-nav__item--cta a {
+.the-header__nav__item--cta a {
   color: white;
   background: #ff1b68;
   padding: 8px 16px;
@@ -76,8 +76,8 @@
   border: none;
 }
 
-.main-nav__item--cta a:active,
-.main-nav__item--cta a:hover {
+.the-header__nav__item--cta a:active,
+.the-header__nav__item--cta a:hover {
   color: #ff1b68;
   background: white;
   border: none;

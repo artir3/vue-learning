@@ -3,7 +3,6 @@
     <section id="product-overview">
       <h1>Consectetur id proident.</h1>
     </section>
-
     <MainSubscriptions />
     <MainAdvertisement />
   </main>
