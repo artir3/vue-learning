@@ -46,6 +46,7 @@ main {
   width: 80%;
   margin: 16px 0;
   border: 4px solid #0e4f1f;
+  border-left: none;
 }
 
 .package a {
@@ -84,6 +85,14 @@ main {
 #free {
   background: rgba(234, 252, 237, 0.95);
   float: right;
+  text-align: right;
+  border-left: 4px solid #0e4f1f;
+  border-right: none;
+}
+
+#free:hover,
+#free:active {
+  border-left-color: #ff5454;
 }
 
 #premium {

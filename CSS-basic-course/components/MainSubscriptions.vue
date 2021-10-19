@@ -1,7 +1,7 @@
 <template>
   <section id="plans">
     <h1 class="section-title">Chose your plan</h1>
-    <div>
+    <div class="plan__list">
       <Subscription v-for="plan in plans" :key="plan.id" :plan="plan" />
     </div>
   </section>
@@ -19,3 +19,11 @@ export default {
   },
 };
 </script>
+
+<style>
+.plan__list {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+</style>

@@ -40,6 +40,7 @@ export default {
   margin: 8px;
   display: inline-block;
   width: 30%;
+  min-width: 200px;
   vertical-align: middle;
 }
 
