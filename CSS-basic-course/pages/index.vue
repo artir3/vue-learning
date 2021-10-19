@@ -4,25 +4,17 @@
       <h1>Consectetur id proident.</h1>
     </section>
 
-    <section id="plans">
-      <h1 class="section-title">Chose your plan</h1>
-      <div>
-        <MainSubscriptions v-for="plan in plans" :key="plan.id" :plan="plan" />
-      </div>
-    </section>
+    <MainSubscriptions />
+    <MainAdvertisement />
   </main>
 </template>
 
 <script>
 import MainSubscriptions from "~~/components/MainSubscriptions.vue";
-import { subscriptions } from "~~/data/subscriptions";
+import MainAdvertisement from "~~/components/MainAdvertisement.vue";
+
 export default {
-  components: { MainSubscriptions },
-  data() {
-    return {
-      plans: subscriptions,
-    };
-  },
+  components: { MainSubscriptions, MainAdvertisement },
 };
 </script>
 
@@ -43,10 +35,5 @@ export default {
 .product-overview h1 {
   color: white;
   font-family: "Anton", "sans-serif";
-}
-
-p::first-letter {
-  color: red;
-  font-size: 20px;
 }
 </style>
