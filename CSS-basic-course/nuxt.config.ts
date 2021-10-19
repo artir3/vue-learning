@@ -1,5 +1,6 @@
 import { defineNuxtConfig } from "nuxt3";
 import { NuxtConfig } from "@nuxt/kit";
+import { resolve } from "pathe";
 
 const nuxtConfig: NuxtConfig = {
   head: {
@@ -17,6 +18,10 @@ const nuxtConfig: NuxtConfig = {
         rel: "stylesheet",
       },
     ],
+  },
+  buildDir: "build",
+  alias: {
+    images: resolve(__dirname, "./assets/images"),
   },
 };
 

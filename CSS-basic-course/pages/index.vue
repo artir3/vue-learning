@@ -32,10 +32,10 @@
 
 <style>
 #product-overview {
-  background-color: #ff1b68;
-  color: white;
+  background-color: url("~assets/images/main-page.jpg");
+  color: rgb(128, 128, 128);
   width: 100%;
-  height: 500px;
+  height: 300px;
   padding: 10px;
 }
 

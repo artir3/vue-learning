@@ -9,7 +9,7 @@
         <li class="main-nav__item">
           <a href="customers">Customers</a>
         </li>
-        <li class="main-nav__item">
+        <li class="main-nav__item main-nav__item--cta">
           <a href="start-hosting">Start Hosting</a>
         </li>
       </ul>
@@ -23,10 +23,6 @@
   background-color: #2ddf5c;
   padding: 8px 16px;
   width: 100%;
-}
-
-.the-header > a {
-  text-decoration: none;
 }
 
 .the-header > div {
@@ -57,18 +53,33 @@
 
 .main-nav__item {
   display: inline-block;
-  border: rgb(71, 71, 71) solid 0.5px;
-  padding: 10px;
   margin: 0 16px;
 }
 
 .main-nav__item a {
   text-decoration: none;
   color: #0e4f1f;
+  padding: 10px;
 }
 
 .main-nav__item a:active,
 .main-nav__item a:hover {
+  border: rgb(71, 71, 71) solid 0.5px;
   color: white;
+}
+
+.main-nav__item--cta a {
+  color: white;
+  background: #ff1b68;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+.main-nav__item--cta a:active,
+.main-nav__item--cta a:hover {
+  color: #ff1b68;
+  background: white;
+  border: none;
 }
 </style>

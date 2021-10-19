@@ -1,5 +1,7 @@
 node_modules
 *.log
 .nuxt
+build
 nuxt.d.ts
 .output
+course-content
