@@ -21,6 +21,7 @@
         <p class="package__info">Get started immediately at zero cost!</p>
       </a>
     </section>
+    <div class="clearfix"></div>
     <section class="package" id="premium">
       <a href="#">
         <h1 class="package__title">Our PREMIUM Plan</h1>
@@ -72,12 +73,17 @@ main {
   background: white;
 }
 
+.clearfix {
+  clear: both;
+}
+
 #plus {
   background: rgba(213, 255, 220, 0.95);
 }
 
 #free {
   background: rgba(234, 252, 237, 0.95);
+  float: right;
 }
 
 #premium {
