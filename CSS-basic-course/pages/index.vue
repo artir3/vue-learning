@@ -7,17 +7,17 @@
     <section id="plans">
       <h1 class="section-title">Chose your plan</h1>
       <div>
-        <subscription-item v-for="plan in plans" :key="plan.id" :plan="plan" />
+        <MainSubscriptions v-for="plan in plans" :key="plan.id" :plan="plan" />
       </div>
     </section>
   </main>
 </template>
 
 <script>
-import SubscriptionItem from "~~/components/SubscriptionItem.vue";
+import MainSubscriptions from "~~/components/MainSubscriptions.vue";
 import { subscriptions } from "~~/data/subscriptions";
 export default {
-  components: { SubscriptionItem },
+  components: { MainSubscriptions },
   data() {
     return {
       plans: subscriptions,
