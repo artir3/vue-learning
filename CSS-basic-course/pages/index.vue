@@ -19,11 +19,12 @@ export default {
 
 <style>
 #product-overview {
-  background-color: url("~~assets/images/main-page.jpg");
-  color: rgb(128, 128, 128);
+  background: url("~~/assets/images/main-page.jpg");
   width: 100%;
-  height: 300px;
+  height: 500px;
   padding: 10px;
+  margin-top: 43px;
+  position: relative;
 }
 
 .section-title {
@@ -31,8 +32,11 @@ export default {
   text-align: center;
 }
 
-.product-overview h1 {
+#product-overview h1 {
   color: white;
   font-family: "Anton", "sans-serif";
+  position: absolute;
+  bottom: 5%;
+  left: 3%;
 }
 </style>

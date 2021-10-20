@@ -1,8 +1,10 @@
 <template>
   <main>
+    <div class="background"></div>
     <section class="package" id="plus">
       <a href="#">
         <h1 class="package__title">Our PLUS Plan</h1>
+        <h2 class="package__badge">RECOMENDED</h2>
         <h2 class="package__subtitle">
           The most popular choice of our customers.
         </h2>
@@ -42,7 +44,16 @@ main {
   padding-top: 32px;
 }
 
+.background {
+  background: url("~~/assets/images/plans-background.jpg");
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
 .package {
+  position: relative;
   width: 80%;
   margin: 16px 0;
   border: 4px solid #0e4f1f;
@@ -72,6 +83,17 @@ main {
   font-size: 20px;
   color: #0e4f1f;
   background: white;
+}
+
+.package__badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  font-size: 12px;
+  color: white;
+  background: #ff5454;
+  padding: 10px;
 }
 
 .clearfix {

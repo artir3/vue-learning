@@ -19,10 +19,13 @@
 
 <style>
 .the-header {
-  width: 100%;
   background-color: #2ddf5c;
   padding: 8px 16px;
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .the-header > div {
