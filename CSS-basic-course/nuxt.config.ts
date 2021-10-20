@@ -1,6 +1,5 @@
 import { defineNuxtConfig } from "nuxt3";
 import { NuxtConfig } from "@nuxt/kit";
-import { resolve } from "pathe";
 
 const nuxtConfig: NuxtConfig = {
   head: {

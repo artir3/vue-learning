@@ -3,21 +3,36 @@
     <h1 class="section-title">Many Good Reasons to Stick Around</h1>
     <ul class="key-feature__list">
       <li class="key-feature" v-for="feature in features" :key="feature">
-        <div class="key-feature__image"></div>
-        <p class="key-feature__description">{{ feature }}</p>
+        <div class="key-feature__image">
+          <div v-html="feature.img" />
+        </div>
+        <p class="key-feature__description">{{ feature.description }}</p>
       </li>
     </ul>
   </section>
 </template>
 
 <script>
+import svg1 from "~~/assets/svgs/1.svg?raw";
+import svg2 from "~~/assets/svgs/2.svg?raw";
+import svg3 from "~~/assets/svgs/3.svg?raw";
+
 export default {
   data() {
     return {
       features: [
-        "3,857,000 Trusting Customers",
-        "99.999% Uptime Guarantee",
-        "Lightning Fast CDN",
+        {
+          description: "3,857,000 Trusting Customers",
+          img: svg1,
+        },
+        {
+          description: "99.999% Uptime Guarantee",
+          img: svg2,
+        },
+        {
+          description: "Lightning Fast CDN",
+          img: svg3,
+        },
       ],
     };
   },
@@ -30,6 +45,7 @@ export default {
   margin-top: 80px;
   padding: 16px;
 }
+
 #key-features .section-title {
   color: white;
   margin: 32px;
@@ -55,6 +71,7 @@ export default {
   border: 2px solid #424242;
   border-radius: 50%;
   margin: auto; /* center hirizontly  */
+  padding: 25px;
 }
 
 .key-feature__description {
