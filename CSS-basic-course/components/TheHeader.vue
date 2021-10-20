@@ -1,6 +1,10 @@
 <template>
   <header class="the-header">
-    <div><a href="/" class="the-header__brand"> uHist </a></div>
+    <div>
+      <a href="/" class="the-header__brand">
+        <img src="~~/assets/images/uhost-icon.png" alt="" />
+      </a>
+    </div>
     <nav class="the-header__nav">
       <ul class="the-header__nav__items">
         <li class="the-header__nav__item">
@@ -39,6 +43,15 @@
   padding: 10px;
   font-weight: bold;
   font-size: 24px;
+  height: 24px;
+  /* width: 22px; */
+  display: inline-block;
+  vertical-align: center;
+}
+
+.the-header__brand img {
+  height: 24px;
+  width: 24px;
 }
 
 .the-header__nav {

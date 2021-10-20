@@ -19,9 +19,16 @@ export default {
 
 <style>
 #product-overview {
-  background: url("~~/assets/images/main-page.jpg");
+  background: url("~~/assets/images/main-page.jpg") left 10% bottom 20% / cover
+    no-repeat border-box;
+  /* background-image: url("~~/assets/images/main-page.jpg");
+  background-position: left 10% bottom 20%;
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-clip: border-box;*/
   width: 100%;
-  height: 500px;
+  height: 600px;
   padding: 10px;
   margin-top: 43px;
   position: relative;

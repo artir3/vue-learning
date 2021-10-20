@@ -20,9 +20,6 @@ const nuxtConfig: NuxtConfig = {
     ],
   },
   buildDir: "build",
-  alias: {
-    images: resolve(__dirname, "./assets/images"),
-  },
 };
 
 export default defineNuxtConfig(nuxtConfig);
