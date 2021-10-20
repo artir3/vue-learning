@@ -45,7 +45,8 @@ main {
 }
 
 .background {
-  background: url("~~/assets/images/plans-background.jpg");
+  background: url("~~/assets/images/plans-background.jpg") center/ cover;
+  filter: grayscale(40%);
   width: 100%;
   height: 100%;
   position: fixed;
