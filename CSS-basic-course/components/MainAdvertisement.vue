@@ -42,7 +42,6 @@ export default {
 <style>
 #key-features {
   background-color: #ff1b68;
-  margin-top: 5rem;
   padding: 1rem;
 }
 

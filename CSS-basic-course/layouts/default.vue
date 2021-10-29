@@ -8,11 +8,14 @@
 <style>
 * {
   box-sizing: border-box;
-  font-size: 16px;
 }
 
 body {
   margin: 0;
+}
+
+main {
+  margin-top: 4rem;
 }
 
 .btn {

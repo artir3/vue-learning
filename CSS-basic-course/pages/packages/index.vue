@@ -40,15 +40,12 @@
 </template>
 
 <style>
-main {
-  padding-top: 2rem;
-}
-
 .background {
   background: url("~~/assets/images/plans-background.jpg") center/ cover;
   filter: grayscale(40%);
   width: 100vw;
   height: 100vh;
+  top: 0;
   position: fixed;
   z-index: -1;
 }

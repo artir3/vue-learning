@@ -22,6 +22,10 @@ export default {
 </script>
 
 <style>
+#plans {
+  margin: 3rem 0;
+}
+
 .plan__list {
   width: 80vw;
   margin: auto;

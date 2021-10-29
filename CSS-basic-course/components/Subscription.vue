@@ -39,7 +39,7 @@ export default {
   padding: 1rem;
   margin: 0.5rem;
   display: inline-block;
-  width: 30vw;
+  width: 30%;
   min-width: 200px;
   vertical-align: middle;
 }

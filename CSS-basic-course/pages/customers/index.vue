@@ -47,16 +47,12 @@
 <style>
 .testimonial {
   font-size: 1.25rem;
-  margin: 0.25rem 0;
+  margin: 1.5rem 0;
 }
 
 .testimonial__list {
   width: 80vw;
   margin: auto;
-}
-
-.testimonial:first-of-type {
-  margin-top: 5rem;
 }
 
 .testimonial__image-container {
@@ -67,7 +63,7 @@
 }
 
 .testimonial__image {
-  width: 100vw;
+  width: 100%;
   vertical-align: middle;
 }
 

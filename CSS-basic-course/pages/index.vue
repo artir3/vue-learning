@@ -18,6 +18,10 @@ export default {
 </script>
 
 <style>
+main {
+  margin-top: 43px;
+}
+
 #product-overview {
   background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
     url("~~/assets/images/main-page.jpg") left 10% bottom 20% / cover no-repeat
@@ -38,7 +42,6 @@ export default {
   width: 100vw;
   height: 30vh;
   padding: 0.625rem;
-  margin-top: 43px;
   /* border: 5px dashed red; */
   position: relative;
 }
