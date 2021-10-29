@@ -24,8 +24,8 @@
 <style>
 .the-header {
   background-color: #2ddf5c;
-  padding: 8px 16px;
-  width: 100%;
+  padding: 0.5rem 1rem;
+  width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
@@ -40,18 +40,16 @@
 .the-header__brand {
   color: #0e4f1f;
   text-decoration: none;
-  padding: 10px;
+  padding: 0.625rem;
   font-weight: bold;
-  font-size: 24px;
-  height: 24px;
-  /* width: 22px; */
+  font-size: 1.5rem;
   display: inline-block;
   vertical-align: center;
 }
 
 .the-header__brand img {
-  height: 24px;
-  width: 24px;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .the-header__nav {
@@ -69,13 +67,13 @@
 
 .the-header__nav__item {
   display: inline-block;
-  margin: 0 16px;
+  margin: 0 1rem;
 }
 
 .the-header__nav__item a {
   text-decoration: none;
   color: #0e4f1f;
-  padding: 10px;
+  padding: 0.625rem;
 }
 
 .the-header__nav__item a:active,
@@ -87,8 +85,8 @@
 .the-header__nav__item--cta a {
   color: white;
   background: #ff1b68;
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
   border: none;
 }
 

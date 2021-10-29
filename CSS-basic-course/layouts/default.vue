@@ -1,4 +1,5 @@
 <template>
+  <the-backdrop />
   <the-header />
   <slot />
   <the-footer />
@@ -7,10 +8,11 @@
 <style>
 * {
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 body {
-  margin: 0px;
+  margin: 0;
 }
 
 .btn {
@@ -18,8 +20,8 @@ body {
   color: white;
   font: inherit;
   border: 1px solid #0e4f1f;
-  border-radius: 8px;
-  padding: 8px;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
   font-weight: bold;
   cursor: pointer;
 }

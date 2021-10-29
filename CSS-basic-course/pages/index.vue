@@ -35,9 +35,9 @@ export default {
     #f35 20%,
     #43e 100%
   ); */
-  width: 100%;
-  height: 600px;
-  padding: 10px;
+  width: 100vw;
+  height: 30vh;
+  padding: 0.625rem;
   margin-top: 43px;
   /* border: 5px dashed red; */
   position: relative;

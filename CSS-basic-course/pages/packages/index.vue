@@ -41,22 +41,22 @@
 
 <style>
 main {
-  padding-top: 32px;
+  padding-top: 2rem;
 }
 
 .background {
   background: url("~~/assets/images/plans-background.jpg") center/ cover;
   filter: grayscale(40%);
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   position: fixed;
   z-index: -1;
 }
 
 .package {
   position: relative;
-  width: 80%;
-  margin: 16px 0;
+  width: 80vh;
+  margin: 1rem 0;
   border: 4px solid #0e4f1f;
   border-left: none;
 }
@@ -65,7 +65,7 @@ main {
   text-decoration: none;
   color: inherit;
   display: block;
-  padding: 32px;
+  padding: 2rem;
 }
 
 .package:hover,
@@ -79,9 +79,9 @@ main {
 }
 
 .package__info {
-  padding: 16px;
+  padding: 1rem;
   border: 1px solid #0e4f1f;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #0e4f1f;
   background: white;
 }
@@ -90,11 +90,11 @@ main {
   position: absolute;
   top: 0;
   right: 0;
-  margin: 20px;
-  font-size: 12px;
+  margin: 1.25rem;
+  font-size: 0.75rem;
   color: white;
   background: #ff5454;
-  padding: 10px;
+  padding: 0.625rem;
 }
 
 .clearfix {

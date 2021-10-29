@@ -42,13 +42,13 @@ export default {
 <style>
 #key-features {
   background-color: #ff1b68;
-  margin-top: 80px;
-  padding: 16px;
+  margin-top: 5rem;
+  padding: 1rem;
 }
 
 #key-features .section-title {
   color: white;
-  margin: 32px;
+  margin: 2rem;
 }
 
 .key-feature__list {
@@ -71,13 +71,13 @@ export default {
   border: 2px solid #424242;
   border-radius: 50%;
   margin: auto; /* center hirizontly  */
-  padding: 25px;
+  padding: 1.5rem;
 }
 
 .key-feature__description {
   text-align: center;
   font-weight: bold;
   color: white;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 </style>

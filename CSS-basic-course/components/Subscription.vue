@@ -36,10 +36,10 @@ export default {
 .plan {
   background: #d5ffdc;
   text-align: center;
-  padding: 16px;
-  margin: 8px;
+  padding: 1rem;
+  margin: 0.5rem;
   display: inline-block;
-  width: 30%;
+  width: 30vw;
   min-width: 200px;
   vertical-align: middle;
 }
@@ -53,7 +53,7 @@ export default {
 .plan__annotation {
   background: white;
   color: #19b84c;
-  padding: 8px;
+  padding: 0.5rem;
   box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.5);
   border-radius: 8px;
 }
@@ -65,7 +65,7 @@ export default {
 }
 
 .plan__features li {
-  margin: 8px 0;
+  margin: 0.5rem 0;
 }
 
 .plan__title {

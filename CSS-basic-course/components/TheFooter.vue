@@ -16,8 +16,8 @@
 <style>
 .the-footer {
   background: black;
-  padding: 32px;
-  margin-top: 48px;
+  padding: 2rem;
+  margin-top: 5rem;
 }
 
 .the-footer__links {
@@ -29,7 +29,7 @@
 
 .the-footer__link {
   display: inline-block;
-  margin: 0 16px;
+  margin: 0 1rem;
 }
 
 .the-footer__link a {

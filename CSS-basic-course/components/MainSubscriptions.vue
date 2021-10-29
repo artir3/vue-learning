@@ -23,7 +23,7 @@ export default {
 
 <style>
 .plan__list {
-  width: 80%;
+  width: 80vw;
   margin: auto;
   text-align: center;
 }
