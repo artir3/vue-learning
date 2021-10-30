@@ -1,5 +1,4 @@
 <template>
-  <the-backdrop />
   <the-header />
   <slot />
   <the-footer />

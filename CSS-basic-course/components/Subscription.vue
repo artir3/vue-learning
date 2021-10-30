@@ -17,9 +17,12 @@
       <li>{{ plan.specs.support }}</li>
     </ul>
     <div>
-      <button class="btn">CHOOSE PLAN</button>
+      <button @click="toggleButton" class="btn">CHOOSE PLAN</button>
     </div>
   </article>
+  <teleport to="body">
+    <the-modal v-if="openModal" @close="toggleButton" />
+  </teleport>
 </template>
 
 <script>
@@ -27,6 +30,16 @@ export default {
   props: {
     plan: {
       require: true,
+    },
+  },
+  data() {
+    return {
+      openModal: false,
+    };
+  },
+  methods: {
+    toggleButton() {
+      this.openModal = !this.openModal;
     },
   },
 };

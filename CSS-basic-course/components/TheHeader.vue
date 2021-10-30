@@ -1,6 +1,7 @@
 <template>
   <header class="the-header">
     <div>
+      <the-mobile-nav-button @switchOnMobile="toggleMobile" />
       <a href="/" class="the-header__brand">
         <img src="~~/assets/images/uhost-icon.png" alt="" />
       </a>
@@ -19,13 +20,27 @@
       </ul>
     </nav>
   </header>
+  <the-mobile-nav v-if="openMobile" @close="toggleMobile" />
 </template>
+
+<script lang="ts">
+export default {
+  data() {
+    return { openMobile: false };
+  },
+  methods: {
+    toggleMobile() {
+      this.openMobile = !this.openMobile;
+    },
+  },
+};
+</script>
 
 <style>
 .the-header {
   background-color: #2ddf5c;
   padding: 0.5rem 1rem;
-  width: 100vw;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -56,7 +71,7 @@
 .the-header__nav {
   display: inline-block;
   text-align: right;
-  width: calc(100% - 100px);
+  width: calc(100% - 150px);
   vertical-align: middle;
 }
 

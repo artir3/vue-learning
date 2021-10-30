@@ -1,11 +1,21 @@
 <template>
-  <div class="backdrop"></div>
+  <div @click="close" class="backdrop"></div>
 </template>
+
+<script>
+export default {
+  emits: ["close"],
+  methods: {
+    close() {
+      this.$emit("close");
+    },
+  },
+};
+</script>
 
 <style>
 .backdrop {
   position: fixed;
-  display: none;
   top: 0;
   left: 0;
   z-index: 100;

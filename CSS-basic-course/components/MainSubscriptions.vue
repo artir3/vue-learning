@@ -27,7 +27,7 @@ export default {
 }
 
 .plan__list {
-  width: 80vw;
+  width: 80%;
   margin: auto;
   text-align: center;
 }
