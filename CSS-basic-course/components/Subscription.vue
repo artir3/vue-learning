@@ -23,7 +23,7 @@
   <teleport to="body">
     <the-modal v-if="openModal" @close="toggleButton" />
   </teleport>
-</template>
+</template> 
 
 <script>
 export default {

@@ -38,4 +38,11 @@ main {
 .btn:focus {
   outline: none;
 }
+
+.btn[disabled] {
+  cursor: not-allowed;
+  border: #a1a1a1;
+  background: #ccc;
+  color: #a1a1a1;
+}
 </style>
