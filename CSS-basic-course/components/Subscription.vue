@@ -50,17 +50,13 @@ export default {
   background: #d5ffdc;
   text-align: center;
   padding: 1rem;
-  margin: 0.5rem;
-  display: inline-block;
-  width: 30%;
-  min-width: 200px;
-  vertical-align: middle;
+  margin: 0.5rem 0;
+  width: 100%;
 }
 
 .plan--highlighted {
   background: #19b84c;
   color: white;
-  box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.5);
 }
 
 .plan__annotation {
@@ -95,5 +91,17 @@ export default {
 
 .plan--highlighted .plan__title {
   color: white;
+}
+
+@media (min-width: 40rem) {
+  .plan {
+    width: 30%;
+    min-width: 13rem;
+    max-width: 25rem;
+    display: inline-block;
+    margin: 0.5rem;
+    vertical-align: middle;
+    box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.5);
+  }
 }
 </style>

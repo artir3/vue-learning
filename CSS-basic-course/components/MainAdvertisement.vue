@@ -53,14 +53,10 @@ export default {
 .key-feature__list {
   list-style: none;
   padding: 0;
-  margin: 0;
-  text-align: center;
 }
 
 .key-feature {
-  display: inline-block;
-  width: 30%;
-  vertical-align: top;
+  width: 100%;
 }
 
 .key-feature__image {
@@ -78,5 +74,19 @@ export default {
   font-weight: bold;
   color: white;
   font-size: 1.25rem;
+}
+
+@media (min-width: 40rem) {
+  .key-feature {
+    display: inline-block;
+    width: 30%;
+    max-width: 20rem;
+    vertical-align: top;
+  }
+
+  .key-feature__list {
+    margin: 0;
+    text-align: center;
+  }
 }
 </style>

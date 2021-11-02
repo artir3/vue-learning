@@ -18,14 +18,9 @@ export default {
 </script>
 
 <style>
-main {
-  margin-top: 43px;
-}
-
 #product-overview {
   background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
-    url("~~/assets/images/main-page.jpg") left 10% bottom 20% / cover no-repeat
-      border-box,
+    url("~~/assets/images/main-page.jpg") center / cover no-repeat border-box,
     #f18484;
   /* background-image: url("~~/assets/images/main-page.jpg");
   background-position: left 10% bottom 20%;
@@ -40,7 +35,7 @@ main {
     #43e 100%
   ); */
   width: 100vw;
-  height: 30vh;
+  height: 33vh;
   padding: 0.625rem;
   /* border: 5px dashed red; */
   position: relative;
@@ -57,5 +52,28 @@ main {
   position: absolute;
   bottom: 5%;
   left: 3%;
+  font-size: 1.6rem;
+}
+
+@media (min-width: 40rem) {
+  #product-overview {
+    height: 40vh;
+    background-position: 50% 25%;
+  }
+
+  #product-overview h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 60rem) and (min-height: 40rem) {
+  #product-overview {
+    height: 50vh;
+    background-position: 50% 25%;
+  }
+
+  #product-overview h1 {
+    font-size: 5rem;
+  }
 }
 </style>

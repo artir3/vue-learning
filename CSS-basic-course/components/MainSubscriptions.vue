@@ -26,9 +26,10 @@ export default {
   margin: 3rem 0;
 }
 
-.plan__list {
-  width: 80%;
-  margin: auto;
-  text-align: center;
+@media (min-width: 35rem) {
+  .plan__list {
+    margin: auto;
+    text-align: center;
+  }
 }
 </style>

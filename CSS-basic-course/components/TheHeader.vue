@@ -1,7 +1,12 @@
 <template>
   <header class="the-header">
     <div>
-      <the-mobile-nav-button @switchOnMobile="toggleMobile" />
+      <the-mobile-nav-button
+        class="the-mobile-nav__button"
+        @switchOnMobile="toggleMobile"
+      />
+    </div>
+    <div>
       <a href="/" class="the-header__brand">
         <img src="~~/assets/images/uhost-icon.png" alt="" />
       </a>
@@ -53,63 +58,76 @@ export default {
 }
 
 .the-header__brand {
-  color: #0e4f1f;
-  text-decoration: none;
-  padding: 0.625rem;
-  font-weight: bold;
-  font-size: 1.5rem;
-  height: 1.5rem;
-  display: inline-block;
-  vertical-align: center;
+  display: none;
 }
-
-.the-header__brand img {
-  height: 1.5rem;
-  width: 1.5rem;
-}
-
 .the-header__nav {
-  display: inline-block;
-  text-align: right;
-  width: calc(100% - 150px);
-  vertical-align: middle;
+  display: none;
 }
 
-.the-header__nav__items {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
+@media (min-width: 40rem) {
+  .the-mobile-nav__button {
+    display: none;
+  }
 
-.the-header__nav__item {
-  display: inline-block;
-  margin: 0 1rem;
-}
+  .the-header__brand {
+    color: #0e4f1f;
+    text-decoration: none;
+    padding: 0.625rem;
+    font-weight: bold;
+    height: 2.5rem;
+    display: inline-block;
+    vertical-align: center;
+  }
 
-.the-header__nav__item a {
-  text-decoration: none;
-  color: #0e4f1f;
-  padding: 0.625rem;
-}
+  .the-header__brand img {
+    /* display: inline-block; */
+    height: 100%;
+    width: 100%;
+  }
 
-.the-header__nav__item a:active,
-.the-header__nav__item a:hover {
-  border: rgb(71, 71, 71) solid 0.5px;
-  color: white;
-}
+  .the-header__nav {
+    display: inline-block;
+    text-align: right;
+    width: calc(100% - 150px);
+    vertical-align: middle;
+  }
 
-.the-header__nav__item--cta a {
-  color: white;
-  background: #ff1b68;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  border: none;
-}
+  .the-header__nav__items {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
 
-.the-header__nav__item--cta a:active,
-.the-header__nav__item--cta a:hover {
-  color: #ff1b68;
-  background: white;
-  border: none;
+  .the-header__nav__item {
+    display: inline-block;
+    margin: 0 1rem;
+  }
+
+  .the-header__nav__item a {
+    text-decoration: none;
+    color: #0e4f1f;
+    padding: 0.625rem;
+  }
+
+  .the-header__nav__item a:active,
+  .the-header__nav__item a:hover {
+    border: rgb(71, 71, 71) solid 0.5px;
+    color: white;
+  }
+
+  .the-header__nav__item--cta a {
+    color: white;
+    background: #ff1b68;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+  }
+
+  .the-header__nav__item--cta a:active,
+  .the-header__nav__item--cta a:hover {
+    color: #ff1b68;
+    background: white;
+    border: none;
+  }
 }
 </style>

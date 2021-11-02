@@ -14,7 +14,8 @@ body {
 }
 
 main {
-  margin-top: 4rem;
+  margin-top: 3.5rem;
+  min-height: calc(100vh - 3.5rem - 8rem);
 }
 
 .btn {

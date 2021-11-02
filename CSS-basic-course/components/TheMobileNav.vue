@@ -3,13 +3,16 @@
   <nav class="the-mobile-nav" @click="close">
     <ul class="the-mobile-nav__items">
       <li class="the-mobile-nav__item">
-        <a href="packages">Packages</a>
+        <a href="/">Home</a>
       </li>
       <li class="the-mobile-nav__item">
-        <a href="customers">Customers</a>
+        <a href="/packages">Packages</a>
+      </li>
+      <li class="the-mobile-nav__item">
+        <a href="/customers">Customers</a>
       </li>
       <li class="the-mobile-nav__item the-mobile-nav__item--cta">
-        <a href="start-hosting">Start Hosting</a>
+        <a href="/start-hosting">Start Hosting</a>
       </li>
     </ul>
   </nav>

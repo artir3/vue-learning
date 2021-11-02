@@ -21,12 +21,11 @@ export default {
 
 <style>
 .toggle-button {
-  width: 3rem;
+  width: 2rem;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0;
   vertical-align: middle;
 }
 
@@ -39,6 +38,6 @@ export default {
   height: 0.2rem;
   background: black;
   display: block;
-  margin: 0.6rem 0;
+  margin: 0.35rem 0;
 }
 </style>

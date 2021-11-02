@@ -1,6 +1,6 @@
 <template>
-  <main>
-    <div class="background"></div>
+  <div class="background"></div>
+  <main class="package__main">
     <section class="package" id="plus">
       <a href="#">
         <h1 class="package__title">Our PLUS Plan</h1>
@@ -40,6 +40,12 @@
 </template>
 
 <style>
+.package__main {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1.5rem;
+}
+
 .background {
   background: url("~~/assets/images/plans-background.jpg") center/ cover;
   filter: grayscale(40%);
@@ -52,10 +58,11 @@
 
 .package {
   position: relative;
-  width: 80vh;
+  width: 100%;
   margin: 1rem 0;
   border: 4px solid #0e4f1f;
   border-left: none;
+  border-right: none;
 }
 
 .package a {
@@ -104,10 +111,6 @@
 
 #free {
   background: rgba(234, 252, 237, 0.95);
-  float: right;
-  text-align: right;
-  border-left: 4px solid #0e4f1f;
-  border-right: none;
 }
 
 #free:hover,
@@ -125,5 +128,36 @@
 
 #premium .package__subtitle {
   color: #bbb;
+}
+
+@media (min-width: 40rem) {
+  .package__main {
+    max-width: 1500px;
+  }
+
+  .package {
+    position: relative;
+    width: 80%;
+    margin: 1rem 0;
+    border: 4px solid #0e4f1f;
+    border-left: none;
+  }
+
+  #free {
+    float: right;
+    text-align: right;
+    border-left: 4px solid #0e4f1f;
+    border-right: none;
+  }
+}
+
+@media (min-width: 1500px) {
+  .package {
+    border: 4px solid #0e4f1f;
+  }
+
+  #free {
+    border-right: 4px solid #0e4f1f;
+  }
 }
 </style>
