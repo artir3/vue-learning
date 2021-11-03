@@ -40,6 +40,30 @@
 </template>
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,900");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+
+@font-face {
+  font-family: "AnonymusPro";
+  src: url("assets/fonts/anonymousPro-Regular.tff");
+}
+
+@font-face {
+  font-family: "AnonymusPro";
+  src: url("assets/fonts/anonymousPro-Bold.tff");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "AnonymusPro";
+  src: url("assets/fonts/anonymousPro-BoldItalic.tff");
+}
+
+@font-face {
+  font-family: "AnonymusPro";
+  src: url("assets/fonts/anonymousPro-Italic.tff");
+}
+
 .package__main {
   margin-left: auto;
   margin-right: auto;
@@ -80,14 +104,36 @@
 
 .package__subtitle {
   color: #979797;
+  text-shadow: 2px 2px 5px rgb(160, 160, 160);
 }
 
 .package__info {
   padding: 1rem;
   border: 1px solid #0e4f1f;
-  font-size: 1.25rem;
   color: #0e4f1f;
   background: white;
+
+  /**
+  "imported fonts"
+  To style font we can use many properties e.g.:
+
+  font-size: 1.25rem;
+  font-family: "AnonymusPro", "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  text-decoration: underline wavy blue;
+
+  Short hand of upper properties will be bellow structure:
+
+  font: font-style font-variant font-weight font-size/line=height font-family;
+  */
+  font: italic small-caps 700 1.2rem/2 "AnonymusPro", "Roboto", sans-serif;
+
+  /** system fonts (menus, status boxes) 
+  font: menu;
+  font: status-bar;
+  */
+  /* font: message-box; */
 }
 
 .package__badge {

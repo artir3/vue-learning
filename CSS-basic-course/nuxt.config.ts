@@ -8,14 +8,14 @@ const nuxtConfig: NuxtConfig = {
       { name: "viewport", content: "width=device-width, initial-scale=1.0" },
     ],
     link: [
-      {
-        href: "https://fonts.googleapis.com/css?family=Anton",
-        rel: "stylesheet",
-      },
-      {
-        href: "https://fonts.googleapis.com/css?family=Montserrat:400,700",
-        rel: "stylesheet",
-      },
+      // {
+      //   href: "https://fonts.googleapis.com/css?family=Anton",
+      //   rel: "stylesheet",
+      // },
+      // {
+      //   href: "https://fonts.googleapis.com/css?family=Montserrat:400,700",
+      //   rel: "stylesheet",
+      // },
     ],
   },
   buildDir: "build",

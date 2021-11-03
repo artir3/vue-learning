@@ -18,6 +18,8 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Anton");
+
 #product-overview {
   background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
     url("~~/assets/images/main-page.jpg") center / cover no-repeat border-box,

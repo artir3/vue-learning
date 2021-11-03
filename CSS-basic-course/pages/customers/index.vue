@@ -96,6 +96,7 @@
 
 .testimonial__text {
   margin: 0.25rem;
+  font-variant: small-caps;
 }
 
 @media (min-width: 40rem) {
