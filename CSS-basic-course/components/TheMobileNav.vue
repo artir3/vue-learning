@@ -35,38 +35,39 @@ export default {
   z-index: 101;
   top: 0;
   left: 0;
+
   background: white;
   width: 80%;
   height: 100vh;
 }
 
-.the-mobile-nav__item a {
-  text-decoration: none;
-  color: #0e4f1f;
-  padding: 0.625rem;
-}
-
 .the-mobile-nav__items {
-  width: 90%;
   height: 100%;
   list-style: none;
-  margin: 10% auto;
+  margin: 0;
   padding: 0;
-  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .the-mobile-nav__item {
-  margin: 1rem 0;
+  margin: 1rem;
 }
 
 .the-mobile-nav__item a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  color: #0e4f1f;
   font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .the-mobile-nav__item--cta a {
   color: white;
   background: #ff1b68;
-  padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   border: none;
 }

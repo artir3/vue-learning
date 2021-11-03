@@ -55,10 +55,6 @@ export default {
   padding: 0;
 }
 
-.key-feature {
-  width: 100%;
-}
-
 .key-feature__image {
   background: #ffcede;
   width: 128px;
@@ -78,15 +74,14 @@ export default {
 
 @media (min-width: 40rem) {
   .key-feature {
-    display: inline-block;
     width: 30%;
     max-width: 20rem;
-    vertical-align: top;
   }
 
   .key-feature__list {
     margin: 0;
-    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 }
 </style>

@@ -1,16 +1,12 @@
 <template>
   <header class="the-header">
-    <div>
-      <the-mobile-nav-button
-        class="the-mobile-nav__button"
-        @switchOnMobile="toggleMobile"
-      />
-    </div>
-    <div>
-      <a href="/" class="the-header__brand">
-        <img src="~~/assets/images/uhost-icon.png" alt="" />
-      </a>
-    </div>
+    <the-mobile-nav-button
+      class="the-mobile-nav__button"
+      @switchOnMobile="toggleMobile"
+    />
+    <a href="/" class="the-header__brand">
+      <img src="~~/assets/images/uhost-icon.png" alt="" />
+    </a>
     <nav class="the-header__nav">
       <ul class="the-header__nav__items">
         <li class="the-header__nav__item">
@@ -44,24 +40,29 @@ export default {
 <style>
 .the-header {
   background-color: #2ddf5c;
-  padding: 0.5rem 1rem;
+  padding: 0.625rem 1rem;
   width: 100%;
+
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
-}
+  z-index: 1000;
 
-.the-header > div {
-  display: inline-block;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .the-header__brand {
   display: none;
 }
+
 .the-header__nav {
   display: none;
+}
+
+.the-mobile-nav__button {
+  height: 2rem;
 }
 
 @media (min-width: 40rem) {
@@ -72,35 +73,27 @@ export default {
   .the-header__brand {
     color: #0e4f1f;
     text-decoration: none;
-    padding: 0.625rem;
     font-weight: bold;
-    height: 2.5rem;
-    display: inline-block;
-    vertical-align: center;
+    display: flex;
   }
 
   .the-header__brand img {
-    /* display: inline-block; */
-    height: 100%;
-    width: 100%;
+    height: 2rem;
   }
 
   .the-header__nav {
-    display: inline-block;
-    text-align: right;
-    width: calc(100% - 150px);
-    vertical-align: middle;
+    display: flex;
   }
 
   .the-header__nav__items {
     padding: 0;
     margin: 0;
     list-style: none;
+    display: flex;
   }
 
   .the-header__nav__item {
-    display: inline-block;
-    margin: 0 1rem;
+    margin-left: 1rem;
   }
 
   .the-header__nav__item a {

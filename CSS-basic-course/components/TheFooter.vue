@@ -24,13 +24,14 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .the-footer__link {
-  width: 100%;
-  height: 2rem;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
 }
 
 .the-footer__link a {
@@ -44,9 +45,12 @@
 }
 
 @media (min-width: 40rem) {
+  .the-footer__links {
+    flex-direction: row;
+    justify-content: center;
+  }
+
   .the-footer__link {
-    display: inline-block;
-    width: max-content;
     margin: 0 1rem;
   }
 }

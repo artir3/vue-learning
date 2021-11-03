@@ -23,7 +23,7 @@
   <teleport to="body">
     <the-modal v-if="openModal" @close="toggleButton" />
   </teleport>
-</template> 
+</template>
 
 <script>
 export default {
@@ -98,10 +98,19 @@ export default {
     width: 30%;
     min-width: 13rem;
     max-width: 25rem;
-    display: inline-block;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 28rem;
+
     margin: 0.5rem;
-    vertical-align: middle;
     box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.5);
+  }
+
+  .plan--highlighted {
+    height: 31rem;
+    z-index: 50;
   }
 }
 </style>
