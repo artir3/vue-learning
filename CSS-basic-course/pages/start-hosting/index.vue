@@ -15,11 +15,13 @@
       <input type="email" id="email" />
       <label for="password">Password</label>
       <input type="password" id="password" />
-      <input type="checkbox" id="agree-terms" required />
-      <label for="agree-terms"
-        >Agree to
-        <a href="#">Terms &amp; Conditions</a>
-      </label>
+      <div class="signup-form__checkbox">
+        <input type="checkbox" id="agree-terms" required />
+        <label for="agree-terms"
+          >Agree to
+          <a href="#">Terms &amp; Conditions</a>
+        </label>
+      </div>
       <button type="submit" class="btn" disabled>Sign Up</button>
     </form>
   </main>
@@ -38,6 +40,10 @@
 
 .signup-form {
   padding: 1rem;
+  display: grid;
+  grid-auto-rows: 2rem;
+  row-gap: 0.5rem;
+  align-items: center;
 }
 
 .signup-form label {
@@ -48,7 +54,6 @@
 .signup-page label,
 .signup-page select {
   display: block;
-  margin-top: 1rem;
   width: 100%;
 }
 
@@ -92,7 +97,6 @@
 
 .signup-form button[type="submit"] {
   display: block;
-  margin-top: 1rem;
 }
 
 .signup-form input.invalid,
@@ -105,7 +109,18 @@
 @media (min-width: 40rem) {
   .signup-form {
     margin: auto;
-    width: 20rem;
+    width: 30rem;
+    row-gap: 1rem;
+
+    grid-template-columns: 7rem auto;
+  }
+
+  .signup-form__checkbox {
+    grid-column: span 2;
+  }
+
+  .signup-form [id="title"] {
+    grid-column: span 2;
   }
 }
 </style>

@@ -9,13 +9,28 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
+  display: grid;
+  height: 100%;
+  grid-template-rows: 3.5rem auto fit-content(8rem);
+  grid-template-areas: "header" "main" "footer";
+}
+
+the-footer {
+  /* grid-row: 3/4; */
+  grid-area: footer;
 }
 
 main {
   margin-top: 3.5rem;
-  min-height: calc(100vh - 3.5rem - 8rem);
+  /* min-height: calc(100vh - 3.5rem - 8rem); */
+  /* grid-row: 2 / 3; */
+  grid-area: main;
 }
 
 .btn {
