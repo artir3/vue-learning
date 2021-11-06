@@ -68,6 +68,10 @@
   padding: 1rem;
 }
 
+#customer-1:hover .testimonial__image-container {
+  animation: flip-customer 1s ease-out forwards;
+}
+
 #customer-2.testimonial {
   text-align: right;
 }
@@ -118,6 +122,18 @@
 
   .testimonial__info {
     width: 30%;
+  }
+}
+
+@keyframes flip-customer {
+  0% {
+    transform: rotateY(0) skew(20deg);
+  }
+  50% {
+    transform: rotateY(160deg) skew(20deg);
+  }
+  100% {
+    transform: rotateY(360deg) skew(20deg);
   }
 }
 </style>

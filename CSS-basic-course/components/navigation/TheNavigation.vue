@@ -86,4 +86,29 @@ export default {
   background: white;
   border: none;
 }
+
+.nav__item--cta {
+  animation: wiggle 300ms 3s 8 none;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotateZ(0);
+  }
+
+  50% {
+    transform: rotateZ(-15deg);
+  }
+
+  100% {
+    transform: rotateZ(15deg);
+  }
+  /* from {
+    transform: rotateZ(-10deg);
+  }
+
+  to {
+    transform: rotateZ(10deg);
+  } */
+}
 </style>
