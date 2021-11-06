@@ -49,14 +49,18 @@
 }
 
 .testimonial__image-container {
-  width: 100%;
+  width: 60%;
   max-width: 40rem;
   box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.3);
+
+  transform: skewX(20deg);
+  overflow: hidden;
 }
 
 .testimonial__image {
   width: 100%;
   vertical-align: middle;
+  transform: skew(-20deg) scale(1.25);
 }
 
 .testimonial__info {

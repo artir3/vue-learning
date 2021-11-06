@@ -87,6 +87,7 @@
   border: 4px solid #0e4f1f;
   border-left: none;
   border-right: none;
+  overflow: hidden;
 }
 
 .package a {
@@ -140,11 +141,16 @@
   position: absolute;
   top: 0;
   right: 0;
-  margin: 1.25rem;
+  margin: 0;
   font-size: 0.75rem;
   color: white;
   background: #ff5454;
   padding: 0.625rem;
+
+  transform: rotateZ(45deg) translateX(4.5rem) translateY(-1rem);
+  transform-origin: center;
+  width: 15rem;
+  text-align: center;
 }
 
 .clearfix {
