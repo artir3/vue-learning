@@ -17,16 +17,20 @@
       <li>{{ plan.specs.support }}</li>
     </ul>
     <div>
-      <button @click="toggleButton" class="btn">CHOOSE PLAN</button>
+      <button @click="showModal" class="btn">CHOOSE PLAN</button>
+      <the-modal :show="modalIsVisible" @close="hideModal">
+        <subscription-modal @close="hideModal" />
+      </the-modal>
     </div>
   </article>
-  <teleport to="body">
-    <the-modal v-if="openModal" @close="toggleButton" />
-  </teleport>
 </template>
 
 <script>
+import SubscriptionModal from "./SubscriptionModal.vue";
+import TheModal from "./TheModal.vue";
+
 export default {
+  components: { SubscriptionModal, TheModal },
   props: {
     plan: {
       require: true,
@@ -34,12 +38,15 @@ export default {
   },
   data() {
     return {
-      openModal: false,
+      modalIsVisible: false,
     };
   },
   methods: {
-    toggleButton() {
-      this.openModal = !this.openModal;
+    showModal() {
+      this.modalIsVisible = true;
+    },
+    hideModal() {
+      this.modalIsVisible = false;
     },
   },
 };
