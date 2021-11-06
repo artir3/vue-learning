@@ -5,19 +5,6 @@
       <img src="~~/assets/images/uhost-icon.png" alt="" />
     </a>
     <the-navigation class="the-header__nav" />
-    <!-- <nav class="the-header__nav">
-      <ul class="the-header__nav__items">
-        <li class="the-header__nav__item">
-          <a href="packages">Packages</a>
-        </li>
-        <li class="the-header__nav__item">
-          <a href="customers">Customers</a>
-        </li>
-        <li class="the-header__nav__item the-header__nav__item--cta">
-          <a href="start-hosting">Start Hosting</a>
-        </li>
-      </ul>
-    </nav> -->
   </header>
 </template>
 
