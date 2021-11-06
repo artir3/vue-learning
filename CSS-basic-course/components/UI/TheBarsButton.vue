@@ -9,11 +9,11 @@
 <script>
 export default {
   emits: {
-    switchOnMobile: Boolean,
+    clicked: Boolean,
   },
   methods: {
     clicked() {
-      this.$emit("switchOnMobile");
+      this.$emit("clicked", true);
     },
   },
 };

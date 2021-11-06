@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import MainSubscriptions from "~~/components/MainSubscriptions.vue";
-import MainAdvertisement from "~~/components/MainAdvertisement.vue";
+import MainSubscriptions from "~~/components/main-page/MainSubscriptions.vue";
+import MainAdvertisement from "~~/components/main-page/MainAdvertisement.vue";
 
 export default {
   components: { MainSubscriptions, MainAdvertisement },

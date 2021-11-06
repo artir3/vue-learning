@@ -9,8 +9,11 @@
   </teleport>
 </template>
 
-<script lang="ts">
+<script>
+import TheBackdrop from "./TheBackdrop.vue";
+
 export default defineComponent({
+  components: { TheBackdrop },
   props: {
     show: Boolean,
   },

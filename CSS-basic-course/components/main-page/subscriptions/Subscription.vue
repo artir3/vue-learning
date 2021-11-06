@@ -27,7 +27,7 @@
 
 <script>
 import SubscriptionModal from "./SubscriptionModal.vue";
-import TheModal from "./TheModal.vue";
+import TheModal from "../../UI/TheModal.vue";
 
 export default {
   components: { SubscriptionModal, TheModal },
@@ -117,7 +117,6 @@ export default {
 
   .plan--highlighted {
     height: 31rem;
-    z-index: 50;
   }
 }
 </style>

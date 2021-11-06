@@ -9,7 +9,7 @@
 
 <script>
 import { subscriptions } from "~~/data/subscriptions";
-import Subscription from "./Subscription.vue";
+import Subscription from "./subscriptions/Subscription.vue";
 
 export default {
   components: { Subscription },
