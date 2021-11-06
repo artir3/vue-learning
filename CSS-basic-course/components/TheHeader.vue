@@ -19,7 +19,7 @@ export default {
 
 <style>
 .the-header {
-  background-color: #2ddf5c;
+  background-color: var(--highlight-green);
   padding: 0.625rem 1rem;
   width: 100%;
 
@@ -47,7 +47,7 @@ export default {
   }
 
   .the-header__brand {
-    color: #0e4f1f;
+    color: var(--dark-green);
     text-decoration: none;
     font-weight: bold;
     display: inline;

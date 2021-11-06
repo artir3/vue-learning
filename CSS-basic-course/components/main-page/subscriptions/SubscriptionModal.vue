@@ -29,8 +29,8 @@ export default {
 }
 
 .subscription-modal__action {
-  border: 1px solid #0e4f1f;
-  background: #0e4f1f;
+  border: 1px solid var(--dark-green);
+  background: var(--dark-green);
   text-decoration: none;
   color: white;
   font: inherit;
@@ -40,8 +40,8 @@ export default {
 
 .subscription-modal__action:hover,
 .subscription-modal__action:active {
-  background: #2ddf5c;
-  border-color: #2ddf5c;
+  background: var(--highlight-green);
+  border-color: var(--highlight-green);
 }
 
 .subscription-modal__action--negative {
@@ -51,7 +51,7 @@ export default {
 
 .subscription-modal__action--negative:hover,
 .subscription-modal__action--negative:active {
-  background: #ff5454;
-  border-color: #ff5454;
+  background: var(--tonned-red);
+  border-color: var(--tonned-red);
 }
 </style>

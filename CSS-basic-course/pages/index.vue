@@ -44,7 +44,7 @@ export default {
 }
 
 .section-title {
-  color: #2ddf5c;
+  color: var(--highlight-green);
   text-align: center;
 }
 

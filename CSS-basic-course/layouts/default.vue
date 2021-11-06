@@ -5,6 +5,13 @@
 </template>
 
 <style>
+:root {
+  --dark-green: #0e4f1f;
+  --highlight-red: #ff1b68;
+  --tonned-red: #ff5454;
+  --highlight-green: #2ddf5c;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -34,10 +41,10 @@ main {
 }
 
 .btn {
-  background-color: #0e4f1f;
+  background-color: var(--dark-green);
   color: white;
   font: inherit;
-  border: 1px solid #0e4f1f;
+  border: 1px solid var(--dark-green);
   border-radius: 0.5rem;
   padding: 0.5rem;
   font-weight: bold;
@@ -47,7 +54,7 @@ main {
 .btn:hover,
 .btn:active {
   background-color: white;
-  color: #0e4f1f;
+  color: var(--dark-green);
 }
 
 .btn:focus {

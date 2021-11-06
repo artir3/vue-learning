@@ -35,7 +35,7 @@
 .signup-title {
   text-align: center;
   font-size: 1.8rem;
-  color: #ff5454;
+  color: var(--highlight-red);
 }
 
 .signup-form {
@@ -68,7 +68,7 @@
 .signup-form select:focus {
   outline: none;
   background: #d8f3df;
-  border-color: #2ddf5c;
+  border-color: var(--highlight-green);
 }
 
 /* .signup-form input[type="checkbox"] it works too*/
@@ -91,8 +91,8 @@
 }
 
 .signup-form input[type="checkbox"]:checked {
-  background: #2ddf5c;
-  border: #0e4f1f;
+  background: var(--highlight-green);
+  border: var(--dark-green);
 }
 
 .signup-form button[type="submit"] {

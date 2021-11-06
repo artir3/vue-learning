@@ -84,7 +84,7 @@
   position: relative;
   width: 100%;
   margin: 1rem 0;
-  border: 4px solid #0e4f1f;
+  border: 4px solid var(--dark-green);
   border-left: none;
   border-right: none;
   overflow: hidden;
@@ -100,7 +100,7 @@
 .package:hover,
 .package:active {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.95);
-  border-color: #ff5454;
+  border-color: var(--tonned-red);
 }
 
 .package__subtitle {
@@ -110,8 +110,8 @@
 
 .package__info {
   padding: 1rem;
-  border: 1px solid #0e4f1f;
-  color: #0e4f1f;
+  border: 1px solid var(--dark-green);
+  color: var(--dark-green);
   background: white;
 
   /**
@@ -144,7 +144,7 @@
   margin: 0;
   font-size: 0.75rem;
   color: white;
-  background: #ff5454;
+  background: var(--tonned-red);
   padding: 0.625rem;
 
   transform: rotateZ(45deg) translateX(4.5rem) translateY(-1rem);
@@ -167,7 +167,7 @@
 
 #free:hover,
 #free:active {
-  border-left-color: #ff5454;
+  border-left-color: var(--tonned-red);
 }
 
 #premium {
@@ -191,25 +191,25 @@
     position: relative;
     width: 80%;
     margin: 1rem 0;
-    border: 4px solid #0e4f1f;
+    border: 4px solid var(--dark-green);
     border-left: none;
   }
 
   #free {
     float: right;
     text-align: right;
-    border-left: 4px solid #0e4f1f;
+    border-left: 4px solid var(--dark-green);
     border-right: none;
   }
 }
 
 @media (min-width: 1500px) {
   .package {
-    border: 4px solid #0e4f1f;
+    border: 4px solid var(--dark-green);
   }
 
   #free {
-    border-right: 4px solid #0e4f1f;
+    border-right: 4px solid var(--dark-green);
   }
 }
 </style>

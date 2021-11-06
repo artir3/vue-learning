@@ -85,7 +85,7 @@ export default {
 }
 
 .plan__title {
-  color: #0e4f1f;
+  color: var(--dark-green);
 }
 
 .plan__price {
@@ -93,7 +93,7 @@ export default {
 }
 
 .plan--highlighted .plan__price {
-  color: #0e4f1f;
+  color: var(--dark-green);
 }
 
 .plan--highlighted .plan__title {

@@ -41,7 +41,7 @@ export default {
 
 <style>
 #key-features {
-  background-color: #ff1b68;
+  background-color: var(--highlight-red);
   padding: 1rem;
 }
 

@@ -83,7 +83,7 @@
 .testimonial__name {
   font-size: 2rem;
   margin: 3px;
-  color: #ff5454;
+  color: var(--tonned-red);
 }
 
 .testimonial__subtitle {

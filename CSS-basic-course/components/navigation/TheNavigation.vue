@@ -42,7 +42,7 @@ export default {
 .nav__item a {
   text-decoration: none;
   padding: 0.5rem 1rem;
-  color: #0e4f1f;
+  color: var(--dark-green);
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -74,7 +74,7 @@ export default {
 
 .nav__item--cta a {
   color: white;
-  background: #ff1b68;
+  background: var(--highlight-red);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   border: none;
@@ -82,7 +82,7 @@ export default {
 
 .nav__item--cta a:active,
 .nav__item--cta a:hover {
-  color: #ff1b68;
+  color: var(--highlight-red);
   background: white;
   border: none;
 }
