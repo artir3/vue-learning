@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+  font-size: 1.5rem;
+}
+
+html {
+  background: #b3b3b3;
+  padding: 5px;
+}
+
+body {
+  background: #b3b3b3;
+  padding: 5px;
+  margin: 0;
+}
+
+.flex-container {
+  display: flex;
+  /* flex-direction: row; */
+  /* flex-wrap: nowrap; */
+  flex-flow: row-reverse wrap;
+  /**
+  ## align-items
+   column direction: vertically
+   row direction: horizontally
+   */
+  align-items: center;
+  /**
+  ## justify-content
+   column direction: horizontally
+   row direction: vertically
+   */
+  justify-content: flex-start;
+
+  /* align-content: space-between; */
+
+  background: white;
+  padding: 10px;
+  border: 5px solid black;
+  height: 800px;
+  text-overflow: clip;
+}
+
+.item-1 {
+  background: #ff7300;
+  color: white;
+  padding: 10px;
+  border: 5px solid black;
+  margin: 10px;
+}
+
+.item-2 {
+  background: #ff9640;
+  color: white;
+  padding: 10px;
+  border: 5px solid black;
+  margin: 10px;
+  width: 250px;
+  font-size: 1.8rem;
+  /**
+    short hand for flex grow shrink basis
+    flex: flex-grow flex-shrink flex-basis;
+    default values are: 
+    flex: 0 1 auto;
+  */
+  flex: 0 1 auto;
+}
+
+.item-3 {
+  background: #ff9640;
+  color: white;
+  padding: 10px;
+  border: 5px solid black;
+  margin: 10px;
+  height: 250px;
+  /**
+    Flex align-self prop
+    Align item (part of flex box) in the flex container
+  */
+  align-self: baseline;
+}
+
+.item-4 {
+  background: #f5c096;
+  color: white;
+  padding: 10px;
+  border: 5px solid black;
+  margin: 10px;
+  width: 300px;
+  height: 300px;
+  /** 
+    flex Order prop 
+    If bigger is order number, the later is the element position 
+  */
+  order: 1;
+}
+
+.item-5 {
+  background: #d3c0b1;
+  color: white;
+  padding: 10px;
+  border: 5px solid black;
+  margin: 10px;
+  width: 350px;
+  /**
+    Element use rest of remain space to occupy it. 
+    Rest of space is calculate first, then it is divided by 
+    sum of flex grow no. and grow flex items by calculated value described by 
+    flex grow.  
+  */
+  flex-grow: 1;
+  /** 
+  opposite to flex-grow 
+  flex-shrink = 0 don't allow to shrink elements
+  */
+  flex-shrink: 0;
+}
+
+.item-6 {
+  background: #d3c0b1;
+  color: white;
+  padding: 10px;
+  border: 5px solid black;
+  margin: 10px;
+  width: 350px;
+  order: -2;
+  flex-shrink: 4;
+  /** 
+    override the width (flex row)/height (flex column) of element
+    auto -> apply width/height
+  */
+  flex-basis: 200px;
+}

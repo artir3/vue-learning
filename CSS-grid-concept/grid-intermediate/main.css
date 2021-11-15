@@ -1,0 +1,68 @@
+.container {
+  margin: 20px;
+  display: grid;
+  height: 400px;
+
+  gap: 10px;
+  grid-template-columns: [hd-start] repeat(4, [col-start] 25% [col-end]) [hd-end];
+  grid-template-rows: [hd-start] 3rem [hd-end] 4fr 1fr;
+  grid-template-areas:
+    "header header header header"
+    ". side main main"
+    "footer footer footer footer";
+  /**
+  how work with each cells
+    default is stretch
+    justify-items - is working with columns;
+    align-items - is working with rows;
+  */
+  /* justify-items: stretch;
+  align-items: stretch; */
+  /**
+  how position entire grid
+    justify-content: center;
+    align-content: center
+  */
+  justify-content: center;
+  align-content: center;
+
+  /**
+    working with z-axis
+  */
+  align-self: center;
+  justify-self: center;
+}
+
+@media (max-width: 40rem) {
+  .container {
+    grid-template-columns: [hd-start] repeat(4, [col-start] 25% [col-end]) [hd-end];
+    grid-template-rows: [hd-start] 3rem [hd-end] 4fr 4fr 1fr;
+    grid-template-areas:
+      "header header header header"
+      "main main main main"
+      "side side side side"
+      "footer footer footer footer";
+  }
+}
+
+.el1 {
+  background: rgba(255, 154, 72, 0.5);
+  grid-area: side;
+}
+
+.el2 {
+  background: rgba(255, 0, 0, 0.5);
+  grid-area: main;
+  z-index: 1;
+}
+
+.el3 {
+  background: rgba(0, 128, 0, 0.5);
+  grid-area: hd;
+}
+
+.el4 {
+  background: rgba(0, 4, 255, 0.5);
+  grid-area: footer;
+  z-index: 12;
+}
